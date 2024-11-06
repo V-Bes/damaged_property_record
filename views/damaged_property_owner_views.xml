@@ -1,0 +1,64 @@
+<odoo>
+        <record id="damaged_property_owner_tree" model="ir.ui.view">
+            <field name="name">damaged.property.owner.tree ()</field>
+            <field name="model">damaged.property.owner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="phone"/>
+                    <field name="age"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="damaged_property_owner_views_form" model="ir.ui.view">
+            <field name="name">damaged.property.owner.form ()</field>
+            <field name="model">damaged.property.owner</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                                <field name="phone"/>
+                                <field name="birthday"/>
+                                <field name="age"/>
+                             </group>
+                            <group>
+                                <field name="foto" widget='image' class="oe_avatar m-0"
+                                option='{"zoom": true, "preview_image":"avatar_256"}'/>
+                                <field name="gender"/>
+                                <field name="passport"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="damaged_property_owner_search" model="ir.ui.view">
+            <field name="name">damaged.property.owner.search (damaged_property_owner)</field>
+            <field name="model">damaged.property.owner</field>
+            <field name="arch" type="xml">
+                <search string="Filters">
+                    <filter string="Owner (Male)" name="male" domain="[('gender','=','male')]"/>
+                    <filter string="Owner (Female)" name="female" domain="[('gender','=','female')]"/>
+                 </search>
+            </field>
+        </record>
+
+        <record id="action_damaged_property_owner_window" model="ir.actions.act_window">
+            <field name="name">Owner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">damaged.property.owner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="damaged_property_menu_owner"
+                  action="action_damaged_property_owner_window"
+                  parent="damaged_property_menu_catalog"
+                  name="Owner" sequence="400"/>
+
+</odoo>

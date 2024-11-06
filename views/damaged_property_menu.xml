@@ -1,0 +1,13 @@
+<odoo>
+
+  <menuitem id="damaged_property_main_menu"
+            name="Damaged property record" sequence="300"/>
+
+  <menuitem id="damaged_property_menu_catalog"
+            parent="damaged_property_main_menu"
+            name="Menu" sequence="100"/>
+
+  <menuitem id="damaged_property_menu_main_settings"
+            parent="damaged_property_main_menu"
+            name="Settings" sequence="900"/>
+</odoo>
