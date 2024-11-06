@@ -6,11 +6,10 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyOwner(models.Model):
-    _name = 'damaged.property.owner'
+    _name = 'dpr.owner'
     _description = 'Owner'
     _rec_name = 'last_name'
 
-    name = fields.Char()
     description = fields.Text()
 
     first_name = fields.Char(
@@ -50,11 +49,10 @@ class DamagedPropertyOwner(models.Model):
         required=True,
     )
 
-    @api.depends('first_name', 'last_name')
-    def _compute_name(self):
-        for owner in self:
-            owner.name = '%s_%s' % (
-                    owner.first_name, owner.last_name)
+    property_ids = fields.One2many(
+        comodel_name='dpr.property',
+        inverse_name='dpr_owner_id',
+    )
 
     @api.depends('birthday')
     def _compute_age(self):

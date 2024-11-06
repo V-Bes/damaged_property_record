@@ -13,9 +13,9 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/damaged_property_menu.xml',
-        'views/damaged_property_owner_views.xml',
-
+        'views/dpr_menu.xml',
+        'views/dpr_owner_views.xml',
+        'views/dpr_property_views.xml',
     ],
     'demo': [
 

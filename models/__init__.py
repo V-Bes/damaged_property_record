@@ -1,1 +1,2 @@
-from . import damaged_property_owner
+from . import dpr_property
+from . import dpr_owner

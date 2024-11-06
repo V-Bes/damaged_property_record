@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access__damaged_property_owner__group_user,access__damaged_property_owner__group_user,model_damaged_property_owner,base.group_user,1,1,1,1
+access__dpr_owner__group_user,access__dpr_owner__group_user,model_dpr_owner,base.group_user,1,1,1,1
+access__dpr_property__group_user,access__dpr_property__group_user,model_dpr_property,base.group_user,1,1,1,1

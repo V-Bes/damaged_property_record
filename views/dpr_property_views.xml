@@ -1,0 +1,66 @@
+<odoo>
+        <record id="dpr_property_tree" model="ir.ui.view">
+            <field name="name">dpr.property.tree ()</field>
+            <field name="model">dpr.property</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dpr_owner_id"/>
+                    <field name="year_construction"/>
+                    <field name="registration_date_BTI"/>
+                    <field name="house_area"/>
+                    <field name="drrp"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dpr_property_views_form" model="ir.ui.view">
+            <field name="name">dpr.property.form ()</field>
+            <field name="model">dpr.property</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dpr_owner_id"/>
+                                <field name="house_area"/>
+                                <field name="year_construction"/>
+                                <field name="number_storeys"/>
+                                <field name="registration_date_BTI"/>
+                             </group>
+                            <group>
+                                <field name="basement"/>
+                                <field name="attic"/>
+                                <field name="count_registered_people"/>
+                                <field name="drrp"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dpr_property_search" model="ir.ui.view">
+            <field name="name">dpr.property.search (dpr_property)</field>
+            <field name="model">dpr.property</field>
+            <field name="arch" type="xml">
+                <search string="Filters">
+                    <filter string="with basement" name="basement" domain="[('basement','=',True)]"/>
+                    <filter string="with attic" name="attic" domain="[('attic','=',True)]"/>
+                 </search>
+            </field>
+        </record>
+
+        <record id="action_dpr_property_window" model="ir.actions.act_window">
+            <field name="name">Property</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dpr.property</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dpr_menu_property"
+                  action="action_dpr_property_window"
+                  parent="dpr_menu_catalog"
+                  name="Property" sequence="400"/>
+
+</odoo>

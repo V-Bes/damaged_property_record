@@ -1,7 +1,7 @@
 <odoo>
-        <record id="damaged_property_owner_tree" model="ir.ui.view">
-            <field name="name">damaged.property.owner.tree ()</field>
-            <field name="model">damaged.property.owner</field>
+        <record id="dpr_owner_tree" model="ir.ui.view">
+            <field name="name">dpr.owner.tree ()</field>
+            <field name="model">dpr.owner</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="first_name"/>
@@ -12,9 +12,9 @@
             </field>
         </record>
 
-        <record id="damaged_property_owner_views_form" model="ir.ui.view">
-            <field name="name">damaged.property.owner.form ()</field>
-            <field name="model">damaged.property.owner</field>
+        <record id="dpr_owner_views_form" model="ir.ui.view">
+            <field name="name">dpr.owner.form ()</field>
+            <field name="model">dpr.owner</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -31,6 +31,7 @@
                                 option='{"zoom": true, "preview_image":"avatar_256"}'/>
                                 <field name="gender"/>
                                 <field name="passport"/>
+                                <field name="property_ids"  widget="many2many_tags"/>
                             </group>
                         </group>
                     </sheet>
@@ -38,27 +39,16 @@
             </field>
         </record>
 
-        <record id="damaged_property_owner_search" model="ir.ui.view">
-            <field name="name">damaged.property.owner.search (damaged_property_owner)</field>
-            <field name="model">damaged.property.owner</field>
-            <field name="arch" type="xml">
-                <search string="Filters">
-                    <filter string="Owner (Male)" name="male" domain="[('gender','=','male')]"/>
-                    <filter string="Owner (Female)" name="female" domain="[('gender','=','female')]"/>
-                 </search>
-            </field>
-        </record>
-
-        <record id="action_damaged_property_owner_window" model="ir.actions.act_window">
+        <record id="action_dpr_owner_window" model="ir.actions.act_window">
             <field name="name">Owner</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">damaged.property.owner</field>
+            <field name="res_model">dpr.owner</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="damaged_property_menu_owner"
-                  action="action_damaged_property_owner_window"
-                  parent="damaged_property_menu_catalog"
+        <menuitem id="dpr_menu_owner"
+                  action="action_dpr_owner_window"
+                  parent="dpr_menu_catalog"
                   name="Owner" sequence="400"/>
 
 </odoo>
