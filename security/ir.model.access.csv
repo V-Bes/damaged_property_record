@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access__dpr_owner__group_user,access__dpr_owner__group_user,model_dpr_owner,base.group_user,1,1,1,1
 access__dpr_property__group_user,access__dpr_property__group_user,model_dpr_property,base.group_user,1,1,1,1
+access__dpr_position__group_user,access__dpr_position__group_user,model_dpr_position,base.group_user,1,1,1,1
+access__dpr_information_notice__group_user,access__dpr_information_notice__group_user,model_dpr_information_notice,base.group_user,1,1,1,1

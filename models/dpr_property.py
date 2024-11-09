@@ -52,3 +52,8 @@ class DamagedPropertyProperty(models.Model):
     address = fields.Text(
         required=True,
     )
+
+    information_notice_ids = fields.One2many(
+        comodel_name='dpr.information.notice',
+        inverse_name='dpr_property_id',
+    )
