@@ -47,6 +47,7 @@ class DamagedPropertyProperty(models.Model):
 
     drrp = fields.Integer(
         required=True,
+        string='DRRP',
     )
 
     address = fields.Text(
@@ -57,3 +58,14 @@ class DamagedPropertyProperty(models.Model):
         comodel_name='dpr.information.notice',
         inverse_name='dpr_property_id',
     )
+
+    @api.constrains('drrp')
+    def _check_duplicate(self):
+        for record in self:
+            is_duplicate = self.search([
+                ('drrp', '=', record.drrp),
+                ('id', '!=', record.id),
+            ])
+            if is_duplicate:
+                raise ValidationError(_('Duplicate property found for the same '
+                                        'DRRP.'))

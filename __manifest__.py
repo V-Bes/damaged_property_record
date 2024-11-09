@@ -18,6 +18,8 @@
         'views/dpr_property_views.xml',
         'views/dpr_position_views.xml',
         'views/dpr_information_notice_views.xml',
+        'views/dpr_application_views.xml',
+
     ],
     'demo': [
 

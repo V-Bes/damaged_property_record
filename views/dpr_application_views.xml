@@ -1,0 +1,53 @@
+<odoo>
+        <record id="dpr_application_tree" model="ir.ui.view">
+            <field name="name">dpr.application.tree ()</field>
+            <field name="model">dpr.application</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="status_application"/>
+                    <field name="dpr_owner_id"/>
+                    <field name="dpr_property_id"/>
+                    <field name="drrp"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dpr_application_form" model="ir.ui.view">
+            <field name="name">dpr.application.form ()</field>
+            <field name="model">dpr.application</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(hr_hospital_vld.hr_group_change_patient_wizard_action)d" type="action" string="Fill out the checklist"/>
+                        <field name="status_application" widget="statusbar" options="{'clickable':'1'}"/>
+                    </header>
+                    <sheet>
+                        <group>
+<!--                            <button string="Change patient" name="jcompute_information_property_owner" type="object" class="oe_highlight" data-hotkey="q"/>-->
+                            <field name="drrp"/>
+                            <field name="text_application"/>
+                            <field name="approved"/>
+                        </group>
+                        <group>
+                            <field name="dpr_information_notice_id"/>
+                            <field name="dpr_property_id"/>
+                            <field name="dpr_owner_id"/>
+                         </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dpr_application_window" model="ir.actions.act_window">
+            <field name="name">Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dpr.application</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dpr_menu_application"
+                  action="action_dpr_application_window"
+                  parent="dpr_menu_catalog"
+                  name="Application" sequence="400"/>
+
+</odoo>

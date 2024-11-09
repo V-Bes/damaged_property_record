@@ -21,17 +21,17 @@
                     <sheet>
                         <group>
                             <group>
+                                <field name="drrp"/>
                                 <field name="dpr_owner_id"/>
                                 <field name="house_area"/>
                                 <field name="year_construction"/>
                                 <field name="number_storeys"/>
-                                <field name="registration_date_BTI"/>
-                             </group>
+                            </group>
                             <group>
                                 <field name="basement"/>
                                 <field name="attic"/>
                                 <field name="count_registered_people"/>
-                                <field name="drrp"/>
+                                <field name="registration_date_BTI"/>
                                 <field name="address"/>
                             </group>
                         </group>

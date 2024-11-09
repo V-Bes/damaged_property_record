@@ -15,6 +15,7 @@ class DamagedPropertyInformationNotice(models.Model):
 
     drrp = fields.Integer(
         required=True,
+        string='DRRP',
     )
 
     description_damaged = fields.Text(

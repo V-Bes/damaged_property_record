@@ -52,6 +52,7 @@ class DamagedPropertyOwner(models.Model):
     property_ids = fields.One2many(
         comodel_name='dpr.property',
         inverse_name='dpr_owner_id',
+        readonly="True",
     )
 
     @api.depends('birthday')
@@ -61,3 +62,18 @@ class DamagedPropertyOwner(models.Model):
                 record.age = fields.Date.today().year - record.birthday.year
             else:
                 record.age = 0
+
+    @api.constrains('first_name', 'last_name', 'phone')
+    def _check_duplicate(self):
+        for record in self:
+            is_duplicate = self.search([
+                ('first_name', '=',
+                 record.first_name),
+                ('last_name', '=',
+                 record.last_name),
+                ('phone', '=', record.phone),
+                ('id', '!=', record.id),
+            ])
+            if is_duplicate:
+                raise ValidationError(_('Duplicate owner found for the same '
+                                        'first name, last name, and phone.'))
