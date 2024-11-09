@@ -13,6 +13,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'wizard/dpr_fill_out_checklist_wizard_view.xml',
         'views/dpr_menu.xml',
         'views/dpr_owner_views.xml',
         'views/dpr_property_views.xml',

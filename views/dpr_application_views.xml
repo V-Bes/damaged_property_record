@@ -18,7 +18,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="%(hr_hospital_vld.hr_group_change_patient_wizard_action)d" type="action" string="Fill out the checklist"/>
+                        <button name="%(damaged_property_record.dpr_fill_out_checklist_wizard_action)d" type="action" string="Fill out the checklist"/>
                         <field name="status_application" widget="statusbar" options="{'clickable':'1'}"/>
                     </header>
                     <sheet>

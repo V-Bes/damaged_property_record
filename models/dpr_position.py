@@ -25,4 +25,8 @@ class DamagedPropertyPosition(models.Model):
         required=True,
     )
 
+    dpr_application_id = fields.Many2one(
+        comodel_name='dpr.application',
+    )
+
     description = fields.Text()

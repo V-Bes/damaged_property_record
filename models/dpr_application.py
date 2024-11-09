@@ -57,6 +57,11 @@ class DamagedPropertyApplication(models.Model):
         readonly="True",
     )
 
+    position_ids = fields.One2many(
+        comodel_name='dpr.position',
+        inverse_name='dpr_application_id',
+    )
+
     @api.depends('approved')
     def _compute_information_property_owner(self):
         if self.drrp and self.approved:
