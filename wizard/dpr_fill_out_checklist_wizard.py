@@ -13,8 +13,16 @@ class DprFillOutChecklist(models.TransientModel):
         comodel_name='dpr.position',
     )
 
+    def get_sum(self):
+        sum = 0
+        for record in self.position_ids:
+            sum = sum + record.price
+        return sum
+
     def calculate_amount(self):
         active_ids = self.env.context.get('active_ids')
         for record in active_ids:
-            patient_id = self.env['hr.hospital.patient'].browse(record)
-            patient_id.hr_hospital_doctor_id = self.doctor_id
+            application_id = self.env['dpr.application'].browse(record)
+            application_id.position_ids = self.position_ids
+            application_id.total_amount = self.get_sum()
+

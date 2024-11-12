@@ -4,6 +4,9 @@
             <field name="model">dpr.application</field>
             <field name="arch" type="xml">
                 <tree>
+                    <header>
+                        <button name="%(damaged_property_record.dpr_application_main_report)d" type="action" string="Application report"/>
+                    </header>
                     <field name="status_application"/>
                     <field name="dpr_owner_id"/>
                     <field name="dpr_property_id"/>
@@ -23,7 +26,6 @@
                     </header>
                     <sheet>
                         <group>
-<!--                            <button string="Change patient" name="jcompute_information_property_owner" type="object" class="oe_highlight" data-hotkey="q"/>-->
                             <field name="drrp"/>
                             <field name="text_application"/>
                             <field name="approved"/>
@@ -32,6 +34,8 @@
                             <field name="dpr_information_notice_id"/>
                             <field name="dpr_property_id"/>
                             <field name="dpr_owner_id"/>
+                            <field name="total_amount" style="font-weight: bold;"/>
+                            <field name="position_ids"/>
                          </group>
                     </sheet>
                 </form>

@@ -1,0 +1,128 @@
+<odoo>
+    <record id="dpr_application_report_A4" model="report.paperformat">
+        <field name="name">dpr_application</field>
+        <field name="format">A4</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">25</field>
+        <field name="margin_right">25</field>
+        <field name="header_spacing">5</field>
+        <field name="header_line" eval="True"/>
+    </record>
+
+    <record id="dpr_application_main_report" model="ir.actions.report">
+        <field name="name">DPR application</field>
+        <field name="model">dpr.application</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">damaged_property_record.dpr_application_main_template</field>
+        <field name="report_file">damaged_property_record.dpr_application_main_template</field>
+        <field name="print_report_name">"Application report"</field>
+        <field name="attachment"/>
+        <field name="paperformat_id" ref="dpr_application_report_A4"/>
+        <field name="binding_model_id" ref="model_dpr_application"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="dpr_info_company_template">
+        <div style="text-align: left; margin-bottom: 20px;">
+            <t t-set="company"
+               t-value="o.env['res.company'].search([], limit=1)"/>
+            <img t-attf-src="/logo.png?company={{ company.id }}"
+                 style="padding: 0px; margin: 0px; height: 54px;"
+                 />
+            <br/>
+            <t t-if="company">
+                <h2>
+                    <span t-field="company.name"/>
+                </h2>
+                <span t-field="company.email"/>
+                <br/>
+                <span t-field="company.phone"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="dpr_footer_template">
+        <t t-set="company" t-value="o.env['res.company'].search([], limit=1)"/>
+        <div style="text-align: center;">
+            <h6>Printed:
+                <t t-esc="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+                | City:
+                <t t-esc="company.city"/>
+            </h6>
+        </div>
+    </template>
+
+    <template id="dpr_application_main_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="row">
+                    <div t-att="{'width':'100%','style':'font-size:12px;'}">
+                        <t t-call="damaged_property_record.dpr_info_company_template"/>
+                        <h3>Application</h3>
+                        DRRP: <tr t-esc="o.drrp"/>
+                        <br/>
+                        <tr t-esc="o.text_application"/>
+                        <br/>
+                        <br/>
+                        <h4>Owner</h4>
+                        <t t-esc="o.dpr_owner_id.last_name"/>
+                        <t t-esc="o.dpr_owner_id.first_name"/>
+                        <br/>
+                        <t t-esc="o.dpr_owner_id.phone"/>
+                        <br/>
+                        <br/>
+                        <h4>Property</h4>
+                        <t t-esc="o.dpr_property_id.address"/>
+                        <br/>
+                        <t t-esc="o.dpr_property_id.year_construction"/>
+                        <br/>
+                        <br/>
+                        <h4>Position</h4>
+                        <table class="table"
+                            style="width: 90%; text-align: left; border-collapse: collapse; padding: 8px; border: thick double #32a1ce;">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Unit measurement</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.position_ids.sorted(key='name', reverse=True)"
+                                   t-as="position">
+                                    <tr>
+                                        <td>
+                                             <t t-esc="position.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="dict(position._fields['unit_measurement'].selection).get(position.unit_measurement)"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="position.price"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="position.description"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <h5>
+                            Total amount:
+                            <strong><t t-esc="o.total_amount"/></strong>
+                            <t t-set="company"
+                                t-value="o.env['res.company'].search([], limit=1)"/>
+                                <span t-field="company.currency_id"/>
+                        </h5>
+                    </div>
+                    <br/>
+                    <t t-call="damaged_property_record.dpr_footer_template"/>
+                    <div style="page-break-after: always;">
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

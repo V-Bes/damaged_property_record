@@ -60,9 +60,31 @@ class DamagedPropertyApplication(models.Model):
     position_ids = fields.One2many(
         comodel_name='dpr.position',
         inverse_name='dpr_application_id',
+        readonly="True",
+        string="Checklist",
     )
 
-    @api.depends('approved')
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        required=True,
+        readonly=True,
+        default=lambda self: self.env.company,
+    )
+    company_currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string='Currency',
+        related='company_id.currency_id',
+        readonly=True,
+        tracking=True,
+    )
+
+    total_amount = fields.Monetary(
+        string='Total amount',
+        currency_field='company_currency_id',
+        readonly="True",
+    )
+
+    @api.depends('approved','total_amount')
     def _compute_information_property_owner(self):
         if self.drrp and self.approved:
             domain_dpr = [('drrp', '=', self.drrp)]
@@ -82,15 +104,22 @@ class DamagedPropertyApplication(models.Model):
                     if not self.dpr_property_id:
                         raise ValidationError(_('No owner with '
                                                 'this information notice.'))
+        #elif self.total_amount:
+        #    raise ValidationError(_('It is prohibited to change '
+        #                            'a confirmed application'))
         else:
             self.dpr_information_notice_id = False
             self.dpr_property_id = False
             self.dpr_owner_id = False
+            self.position_ids = False
+            self.total_amount = False
 
     @api.depends('approved')
     def _compute_status_application(self):
         for record in self:
-            if record.approved:
+            if record.approved and record.total_amount:
+                record.status_application = 'processed'
+            elif record.approved:
                 record.status_application = 'at_work'
             else:
                 record.status_application = 'new'
