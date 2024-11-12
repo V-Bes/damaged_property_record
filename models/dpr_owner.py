@@ -29,7 +29,6 @@ class DamagedPropertyOwner(models.Model):
             ('male', 'Male'),
             ('female', 'Female'),
         ],
-        required=True,
     )
 
     foto = fields.Image(
@@ -38,7 +37,7 @@ class DamagedPropertyOwner(models.Model):
     )
 
     birthday = fields.Date(
-        required=True,
+
     )
 
     age = fields.Integer(
@@ -46,7 +45,7 @@ class DamagedPropertyOwner(models.Model):
     )
 
     passport = fields.Text(
-        required=True,
+
     )
 
     property_ids = fields.One2many(

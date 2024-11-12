@@ -14,13 +14,10 @@ class DamagedPropertyApplication(models.Model):
     _rec_name = 'drrp'
 
     drrp = fields.Integer(
-        required=True,
         string='DRRP',
     )
 
-    text_application = fields.Text(
-        required=True,
-    )
+    text_application = fields.Text()
 
     approved = fields.Boolean(
         default=False
@@ -57,9 +54,8 @@ class DamagedPropertyApplication(models.Model):
         readonly="True",
     )
 
-    position_ids = fields.One2many(
+    position_ids = fields.Many2many(
         comodel_name='dpr.position',
-        inverse_name='dpr_application_id',
         readonly="True",
         string="Checklist",
     )
@@ -125,6 +121,7 @@ class DamagedPropertyApplication(models.Model):
                 record.status_application = 'new'
 
     @api.onchange('approved')
+    @api.constrains('approved')
     def _onchange_approved(self):
         if self.approved:
             if not (self.drrp and self.text_application):

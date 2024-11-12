@@ -69,3 +69,10 @@ class DamagedPropertyProperty(models.Model):
             if is_duplicate:
                 raise ValidationError(_('Duplicate property found for the same '
                                         'DRRP.'))
+
+    @api.constrains('year_construction','registration_date_BTI')
+    def _check_duplicate(self):
+        for record in self:
+            if record.year_construction > record.registration_date_BTI :
+                raise ValidationError(_('The registration date cannot be '
+                                        'greater than the construction date.'))
