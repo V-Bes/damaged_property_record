@@ -23,6 +23,10 @@ class DamagedPropertyApplication(models.Model):
         default=False
     )
 
+    date_creation = fields.Date(
+        required=True,
+    )
+
     status_application = fields.Selection(
         selection=[
             ('new', 'new'),
@@ -83,7 +87,8 @@ class DamagedPropertyApplication(models.Model):
     @api.depends('approved','total_amount')
     def _compute_information_property_owner(self):
         if self.drrp and self.approved:
-            domain_dpr = [('drrp', '=', self.drrp)]
+            domain_dpr = [('drrp', '=', self.drrp),
+                          ('approved', '=', True)]
             self.dpr_information_notice_id = (
                 self.env['dpr.information.notice'].search(domain_dpr))
             if not self.dpr_information_notice_id:

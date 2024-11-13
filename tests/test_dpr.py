@@ -10,12 +10,12 @@ _logger = logging.getLogger(__name__)
 
 class TestHospital(TestCommon):
 
-    def test_01_action_owner_duplicate(self):
+    def test_01_action_owner_phone(self):
         with self.assertRaises(ValidationError):
-            self.test_owner2 = self.env['dpr.owner'].create({
-                'first_name': self.test_owner1.first_name,
-                'last_name': self.test_owner1.last_name,
-                'phone': self.test_owner1.phone,
+            self.test_owner1 = self.env['dpr.owner'].create({
+                'first_name': 'Test',
+                'last_name': 'Test',
+                'phone': '111',
             })
 
     def test_02_action_application_approved(self):
@@ -24,7 +24,7 @@ class TestHospital(TestCommon):
                 'approved': 'True',
                 })
 
-    def test_03_action_application_approved(self):
+    def test_03_action_property_date(self):
         with self.assertRaises(ValidationError):
             self.test_property1 = self.env['dpr.property'].create({
                 'house_area': 25,
@@ -34,4 +34,22 @@ class TestHospital(TestCommon):
                 'drrp': 545,
                 'address': 'Test',
                 'number_storeys': 12,
+            })
+
+    def test_04_action_information_notice_approved(self):
+        with (self.assertRaises(ValidationError)):
+            self.test_information_notice1 = self.env['dpr.information.notice'
+            ].create({
+                'drrp': 111,
+                'description_damaged': 'Test',
+                'date_damaged': fields.Datetime.now(),
+                'approved': 'True',
+            })
+
+    def test_05_action_position_duplicate(self):
+        with self.assertRaises(ValidationError):
+            self.test_position2 = self.env['dpr.position'].create({
+                'name': self.test_position1.name,
+                'unit_measurement': self.test_position1.unit_measurement,
+                'price': self.test_position1.price,
             })

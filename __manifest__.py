@@ -18,9 +18,10 @@
         'views/dpr_menu.xml',
         'views/dpr_owner_views.xml',
         'views/dpr_property_views.xml',
-        'views/dpr_position_views.xml',
         'views/dpr_information_notice_views.xml',
         'views/dpr_application_views.xml',
+        'views/dpr_city_views.xml',
+        'views/dpr_position_views.xml',
 
     ],
     'demo': [

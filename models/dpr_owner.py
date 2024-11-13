@@ -1,4 +1,6 @@
 import logging
+import re
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -37,7 +39,7 @@ class DamagedPropertyOwner(models.Model):
     )
 
     birthday = fields.Date(
-
+        required=True,
     )
 
     age = fields.Integer(
@@ -45,7 +47,7 @@ class DamagedPropertyOwner(models.Model):
     )
 
     passport = fields.Text(
-
+        required=True,
     )
 
     property_ids = fields.One2many(
@@ -76,3 +78,14 @@ class DamagedPropertyOwner(models.Model):
             if is_duplicate:
                 raise ValidationError(_('Duplicate owner found for the same '
                                         'first name, last name, and phone.'))
+
+    @api.constrains('phone')
+    def _check_phone_number(self):
+        phone_pattern = re.compile(
+            r'^\+?[\d\s]{10,15}$')
+
+        for record in self:
+            if record.phone and not phone_pattern.match(record.phone):
+                raise ValidationError(_(
+                    "Please enter a valid phone number (10-15 digits, "
+                    "optional '+' at the start)."))

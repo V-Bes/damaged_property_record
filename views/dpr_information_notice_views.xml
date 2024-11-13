@@ -40,7 +40,7 @@
 
         <menuitem id="dpr_menu_information_notice"
                   action="action_dpr_information_notice_window"
-                  parent="dpr_menu_catalog"
+                  parent="dpr_main_menu"
                   name="Information notice" sequence="400"/>
 
 </odoo>

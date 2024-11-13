@@ -6,7 +6,7 @@
                 <tree>
                     <field name="dpr_owner_id"/>
                     <field name="year_construction"/>
-                    <field name="registration_date_BTI"/>
+                    <field name="city"/>
                     <field name="house_area"/>
                     <field name="drrp"/>
                 </tree>
@@ -32,6 +32,7 @@
                                 <field name="attic"/>
                                 <field name="count_registered_people"/>
                                 <field name="registration_date_BTI"/>
+                                <field name="city"/>
                                 <field name="address"/>
                             </group>
                         </group>
@@ -60,7 +61,7 @@
 
         <menuitem id="dpr_menu_property"
                   action="action_dpr_property_window"
-                  parent="dpr_menu_catalog"
+                  parent="dpr_main_menu"
                   name="Property" sequence="400"/>
 
 </odoo>

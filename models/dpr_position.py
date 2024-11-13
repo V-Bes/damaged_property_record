@@ -30,3 +30,18 @@ class DamagedPropertyPosition(models.Model):
     )
 
     description = fields.Text()
+
+    @api.constrains('name', 'unit_measurement', 'price')
+    def _check_duplicate(self):
+        for record in self:
+            is_duplicate = self.search([
+                ('name', '=',
+                 record.name),
+                ('unit_measurement', '=',
+                 record.unit_measurement),
+                ('price', '=', record.price),
+                ('id', '!=', record.id),
+            ])
+            if is_duplicate:
+                raise ValidationError(_('Duplicate position found for the same'
+                                        'name, unit measurement, and price.'))

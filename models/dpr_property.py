@@ -50,6 +50,11 @@ class DamagedPropertyProperty(models.Model):
         string='DRRP',
     )
 
+    city = fields.Many2one(
+        comodel_name='dpr.city',
+        required=True,
+    )
+
     address = fields.Text(
         required=True,
     )

@@ -15,6 +15,18 @@
             </field>
         </record>
 
+         <record id="dpr_application_graph" model="ir.ui.view">
+             <field name="name">dpr.application.graph (dpr_application)</field>
+             <field name="model">dpr.application</field>
+             <field name="priority">60</field>
+             <field name="arch" type="xml">
+                 <graph string="Graph" stacked="0">
+                     <field name="date_creation"/>
+                     <field name="dpr_property_id" type="measure" string="Property date For graph"/>
+                 </graph>
+             </field>
+         </record>
+
         <record id="dpr_application_form" model="ir.ui.view">
             <field name="name">dpr.application.form ()</field>
             <field name="model">dpr.application</field>
@@ -29,6 +41,7 @@
                             <field name="drrp"/>
                             <field name="text_application"/>
                             <field name="approved"/>
+                            <field name="date_creation"/>
                         </group>
                         <group>
                             <field name="dpr_information_notice_id"/>
@@ -42,16 +55,29 @@
             </field>
         </record>
 
+        <record id="dpr_application_pivot" model="ir.ui.view">
+            <field name="name">dpr.application.pivot (dpr_application)</field>
+            <field name="model">dpr.application</field>
+            <field name="priority">50</field>
+            <field name="arch" type="xml">
+            <pivot string="Pivot">
+                <field name="total_amount" type="measure"/>
+                <field name="dpr_property_id" type="row"/>
+                <field name="date_creation" interval="month" type="col"/>
+            </pivot>
+            </field>
+        </record>
+
         <record id="action_dpr_application_window" model="ir.actions.act_window">
             <field name="name">Application</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">dpr.application</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
         </record>
 
         <menuitem id="dpr_menu_application"
                   action="action_dpr_application_window"
-                  parent="dpr_menu_catalog"
+                  parent="dpr_main_menu"
                   name="Application" sequence="400"/>
 
 </odoo>

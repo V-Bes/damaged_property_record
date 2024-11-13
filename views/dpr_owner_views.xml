@@ -48,7 +48,7 @@
 
         <menuitem id="dpr_menu_owner"
                   action="action_dpr_owner_window"
-                  parent="dpr_menu_catalog"
+                  parent="dpr_main_menu"
                   name="Owner" sequence="400"/>
 
 </odoo>

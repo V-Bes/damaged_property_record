@@ -1,0 +1,38 @@
+<odoo>
+        <record id="dpr_city_tree" model="ir.ui.view">
+            <field name="name">dpr.city.tree ()</field>
+            <field name="model">dpr.city</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dpr_city_views_form" model="ir.ui.view">
+            <field name="name">dpr.city.form ()</field>
+            <field name="model">dpr.city</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dpr_city_window" model="ir.actions.act_window">
+            <field name="name">City</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dpr.city</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dpr_menu_city"
+                  action="action_dpr_city_window"
+                  parent="dpr_menu_main_settings"
+                  name="City" sequence="400"/>
+
+</odoo>

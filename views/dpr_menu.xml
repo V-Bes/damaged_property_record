@@ -1,7 +1,7 @@
 <odoo>
 
   <menuitem id="dpr_main_menu"
-            name="Damaged property record" sequence="300"/>
+            name="Damaged property" sequence="500"/>
 
   <menuitem id="dpr_menu_catalog"
             parent="dpr_main_menu"
@@ -9,5 +9,5 @@
 
   <menuitem id="dpr_menu_main_settings"
             parent="dpr_main_menu"
-            name="Settings" sequence="900"/>
+            name="Directory" sequence="900"/>
 </odoo>

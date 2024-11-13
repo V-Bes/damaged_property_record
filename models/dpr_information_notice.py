@@ -37,6 +37,7 @@ class DamagedPropertyInformationNotice(models.Model):
         readonly="True",
     )
 
+    @api.constrains('approved')
     @api.depends('approved')
     def _compute_property(self):
         if self.drrp and self.approved==True:
