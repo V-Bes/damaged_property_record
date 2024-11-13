@@ -39,7 +39,7 @@
 
         <menuitem id="dpr_menu_position"
                   action="action_dpr_position_window"
-                  parent="dpr_menu_main_settings"
+                  parent="dpr_main_menu"
                   name="Position" sequence="400"/>
 
 </odoo>

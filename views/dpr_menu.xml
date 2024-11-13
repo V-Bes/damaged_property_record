@@ -9,5 +9,5 @@
 
   <menuitem id="dpr_menu_main_settings"
             parent="dpr_main_menu"
-            name="Directory" sequence="900"/>
+            name="Appeals" sequence="200"/>
 </odoo>

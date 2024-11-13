@@ -33,7 +33,6 @@ class DamagedPropertyApplication(models.Model):
             ('at_work', 'at work'),
             ('processed', 'processed'),
         ],
-        compute='_compute_status_application',
         string='Status',
         default='new',
         readonly='True',
@@ -61,7 +60,7 @@ class DamagedPropertyApplication(models.Model):
     position_ids = fields.Many2many(
         comodel_name='dpr.position',
         readonly="True",
-        string="Checklist",
+        #string="Checklist",
     )
 
     company_id = fields.Many2one(
@@ -81,7 +80,8 @@ class DamagedPropertyApplication(models.Model):
     total_amount = fields.Monetary(
         string='Total amount',
         currency_field='company_currency_id',
-        readonly="True",
+        readonly=True,
+        tracking=True,
     )
 
     @api.depends('approved','total_amount')
@@ -115,7 +115,8 @@ class DamagedPropertyApplication(models.Model):
             self.position_ids = False
             self.total_amount = False
 
-    @api.depends('approved')
+    @api.constrains('approved','total_amount')
+    @api.depends('approved','total_amount')
     def _compute_status_application(self):
         for record in self:
             if record.approved and record.total_amount:

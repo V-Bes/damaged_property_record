@@ -64,6 +64,10 @@ class DamagedPropertyProperty(models.Model):
         inverse_name='dpr_property_id',
     )
 
+    color = fields.Integer(
+        string='Color Index'
+    )
+
     @api.constrains('drrp')
     def _check_duplicate(self):
         for record in self:

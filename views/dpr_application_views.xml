@@ -7,10 +7,10 @@
                     <header>
                         <button name="%(damaged_property_record.dpr_application_main_report)d" type="action" string="Application report"/>
                     </header>
-                    <field name="status_application"/>
                     <field name="dpr_owner_id"/>
                     <field name="dpr_property_id"/>
                     <field name="drrp"/>
+                    <field name="status_application" widget="badge" decoration-success="status_application == 'processed'" decoration-info="status_application == 'at_work'" decoration-danger="status_application == 'new'" optional="show" on_change="1"/>
                 </tree>
             </field>
         </record>
@@ -40,16 +40,23 @@
                         <group>
                             <field name="drrp"/>
                             <field name="text_application"/>
-                            <field name="approved"/>
+                            <field name="approved" optional="hide" widget="boolean_toggle"/>
                             <field name="date_creation"/>
                         </group>
                         <group>
                             <field name="dpr_information_notice_id"/>
                             <field name="dpr_property_id"/>
                             <field name="dpr_owner_id"/>
-                            <field name="total_amount" style="font-weight: bold;"/>
-                            <field name="position_ids"/>
+                            <field name="total_amount" style="font-weight: bold;" widget="monetary"/>
+                            <!--<field name="position_ids"/>-->
                          </group>
+                        <notebook>
+                            <page name="html_note_id" string="HTML book note">
+                                <group>
+                                    <field name="position_ids" options="{'codeview': true}" class="oe-bordered-editor"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -68,6 +75,17 @@
             </field>
         </record>
 
+        <record id="dpr_application_search" model="ir.ui.view">
+            <field name="name">dpr.application.search (dpr_application)</field>
+            <field name="model">dpr.application</field>
+            <field name="arch" type="xml">
+                <search string="Group By">
+                    <filter string="Date creation application" domain="[]" name="date_creation_group" context="{'group_by':'date_creation'}"/>
+                    <filter string="Status application" domain="[]" name="status_application_group" context="{'group_by':'status_application'}"/>
+                 </search>
+            </field>
+        </record>
+
         <record id="action_dpr_application_window" model="ir.actions.act_window">
             <field name="name">Application</field>
             <field name="type">ir.actions.act_window</field>
@@ -77,7 +95,7 @@
 
         <menuitem id="dpr_menu_application"
                   action="action_dpr_application_window"
-                  parent="dpr_main_menu"
+                  parent="dpr_menu_main_settings"
                   name="Application" sequence="400"/>
 
 </odoo>

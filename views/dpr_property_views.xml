@@ -28,8 +28,8 @@
                                 <field name="number_storeys"/>
                             </group>
                             <group>
-                                <field name="basement"/>
-                                <field name="attic"/>
+                                <field name="basement" widget="boolean_toggle"/>
+                                <field name="attic" widget="boolean_toggle"/>
                                 <field name="count_registered_people"/>
                                 <field name="registration_date_BTI"/>
                                 <field name="city"/>
@@ -52,11 +52,47 @@
             </field>
         </record>
 
+        <record id="dpr_property_kanban" model="ir.ui.view">
+            <field name="name">dpr.property.kanban (dpr_property)</field>
+            <field name="model">dpr.property</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" default_group_by="city" default_order="city"
+                        records_draggable="False" archivable="False" on_create="damaged_property_record.action_dpr_property_window" draggable="True">
+                    <field name="color"/>
+                    <field name="city"/>
+                    <templates>
+                        <t t-name="kanban-menu">
+                            <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                            <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                                <t t-set="raw_value" t-value="record.address.raw_value" />
+                                <div>
+                                    <strong class="o_kanban_record_title"><field name="address"/></strong>
+                                    <span> </span>
+                                    <strong class="o_kanban_record_title"><field name="address"/></strong>
+                                </div>
+                                <div>
+                                    <span class="o_kanban_record_subtitle"><field name="address"/></span>
+                                </div>
+                                <div>
+                                    <span class="o_kanban_record_subtitle"><field name="city"/></span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record id="action_dpr_property_window" model="ir.actions.act_window">
             <field name="name">Property</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">dpr.property</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <menuitem id="dpr_menu_property"

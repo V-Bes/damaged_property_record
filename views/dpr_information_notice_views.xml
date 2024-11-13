@@ -5,7 +5,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="date_damaged"/>
-                    <field name="approved"/>
+                    <field name="approved" widget="boolean_toggle"/>
                     <field name="drrp"/>
                 </tree>
             </field>
@@ -23,11 +23,21 @@
                             <field name="description_damaged"/>
                         </group>
                         <group>
-                            <field name="approved"/>
+                            <field name="approved" widget="boolean_toggle"/>
                             <field name="dpr_property_id"/>
                          </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="dpr_information_notice_search" model="ir.ui.view">
+            <field name="name">dpr.information.notice.search (dpr_information_notice)</field>
+            <field name="model">dpr.information.notice</field>
+            <field name="arch" type="xml">
+                <search string="Filters">
+                    <filter string="not approved" name="approved" domain="[('approved','=',False)]"/>
+                 </search>
             </field>
         </record>
 
@@ -40,7 +50,7 @@
 
         <menuitem id="dpr_menu_information_notice"
                   action="action_dpr_information_notice_window"
-                  parent="dpr_main_menu"
+                  parent="dpr_menu_main_settings"
                   name="Information notice" sequence="400"/>
 
 </odoo>
