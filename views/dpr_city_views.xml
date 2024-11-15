@@ -32,7 +32,7 @@
 
         <menuitem id="dpr_menu_city"
                   action="action_dpr_city_window"
-                  parent="dpr_main_menu"
+                  parent="dpr_menu_main_consumers"
                   name="City" sequence="400"/>
 
 </odoo>

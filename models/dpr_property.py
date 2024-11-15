@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 class DamagedPropertyProperty(models.Model):
     _name = 'dpr.property'
     _description = 'Property'
-    _rec_name = 'address'
+    _rec_name = 'drrp'
 
     description = fields.Text()
 
@@ -52,12 +52,9 @@ class DamagedPropertyProperty(models.Model):
 
     city = fields.Many2one(
         comodel_name='dpr.city',
-        required=True,
     )
 
-    address = fields.Text(
-        required=True,
-    )
+    address = fields.Text()
 
     information_notice_ids = fields.One2many(
         comodel_name='dpr.information.notice',

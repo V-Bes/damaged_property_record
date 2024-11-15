@@ -23,6 +23,14 @@ class DprFillOutChecklist(models.TransientModel):
         active_ids = self.env.context.get('active_ids')
         for record in active_ids:
             application_id = self.env['dpr.application'].browse(record)
-            application_id.position_ids = self.position_ids
+            for position_id in self.position_ids:
+                self.env['dpr.invoice'].create(
+                    {'dpr_position_id': position_id.id,
+                     'unit_measurement': position_id.unit_measurement,
+                     'price': position_id.price,
+                     'quantity': 1,
+                     'total_sum': position_id.price,
+                     'dpr_application_ids': application_id})
+
             application_id.total_amount = self.get_sum()
 

@@ -11,6 +11,11 @@
     'installable': True,
     'auto_install': False,
 
+    'depends': [
+        'base',
+        'mail',
+    ],
+
     'data': [
         'security/ir.model.access.csv',
         'report/hr_hospital_application_report.xml',
@@ -22,6 +27,7 @@
         'views/dpr_application_views.xml',
         'views/dpr_city_views.xml',
         'views/dpr_position_views.xml',
+        'views/dpr_invoice_views.xml',
 
     ],
     'demo': [

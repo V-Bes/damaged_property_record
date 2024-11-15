@@ -97,7 +97,7 @@
 
         <menuitem id="dpr_menu_property"
                   action="action_dpr_property_window"
-                  parent="dpr_main_menu"
+                  parent="dpr_menu_main_consumers"
                   name="Property" sequence="400"/>
 
 </odoo>

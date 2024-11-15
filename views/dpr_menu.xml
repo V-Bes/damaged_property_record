@@ -10,4 +10,9 @@
   <menuitem id="dpr_menu_main_settings"
             parent="dpr_main_menu"
             name="Appeals" sequence="200"/>
+
+    <menuitem id="dpr_menu_main_consumers"
+            parent="dpr_main_menu"
+            name="Consumers" sequence="300"/>
+
 </odoo>

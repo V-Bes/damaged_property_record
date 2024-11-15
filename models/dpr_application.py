@@ -12,6 +12,11 @@ class DamagedPropertyApplication(models.Model):
     _name = 'dpr.application'
     _description = 'Application'
     _rec_name = 'drrp'
+    _inherit = ['mail.thread']
+
+    number = fields.Char(
+        required=True,
+    )
 
     drrp = fields.Integer(
         string='DRRP',
@@ -55,12 +60,11 @@ class DamagedPropertyApplication(models.Model):
         comodel_name='dpr.information.notice',
         string="Information notice",
         readonly="True",
+        store=True
     )
 
-    position_ids = fields.Many2many(
-        comodel_name='dpr.position',
-        readonly="True",
-        #string="Checklist",
+    invoice_ids = fields.Many2many(
+        comodel_name='dpr.invoice',
     )
 
     company_id = fields.Many2one(
@@ -105,14 +109,11 @@ class DamagedPropertyApplication(models.Model):
                     if not self.dpr_property_id:
                         raise ValidationError(_('No owner with '
                                                 'this information notice.'))
-        #elif self.total_amount:
-        #    raise ValidationError(_('It is prohibited to change '
-        #                            'a confirmed application'))
         else:
             self.dpr_information_notice_id = False
             self.dpr_property_id = False
             self.dpr_owner_id = False
-            self.position_ids = False
+            self.invoice_ids = False
             self.total_amount = False
 
     @api.constrains('approved','total_amount')
@@ -133,3 +134,10 @@ class DamagedPropertyApplication(models.Model):
             if not (self.drrp and self.text_application):
                 raise ValidationError(_('The application cannot approved, fill in '
                                     'the fields (DRRP and Text Application).'))
+
+    @api.onchange('invoice_ids')
+    @api.constrains('invoice_ids')
+    def _compute_sum(self):
+        self.total_amount = 0
+        for record in self.invoice_ids:
+            self.total_amount = self.total_amount + record.total_sum

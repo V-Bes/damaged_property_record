@@ -78,7 +78,7 @@
                         <t t-esc="o.dpr_property_id.year_construction"/>
                         <br/>
                         <br/>
-                        <h4>Position</h4>
+                        <h4>Checklist</h4>
                         <table class="table"
                             style="width: 90%; text-align: left; border-collapse: collapse; padding: 8px; border: thick double #32a1ce;">
                             <thead>
@@ -86,24 +86,28 @@
                                     <th>Name</th>
                                     <th>Unit measurement</th>
                                     <th>Price</th>
-                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Sum</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="o.position_ids.sorted(key='name', reverse=True)"
-                                   t-as="position">
+                                <t t-foreach="o.invoice_ids.sorted(key='dpr_position_id', reverse=True)"
+                                   t-as="invoice">
                                     <tr>
                                         <td>
-                                             <t t-esc="position.name"/>
+                                             <t t-esc="invoice.dpr_position_id.name"/>
                                         </td>
                                         <td>
-                                            <t t-esc="dict(position._fields['unit_measurement'].selection).get(position.unit_measurement)"/>
+                                            <t t-esc="dict(invoice._fields['unit_measurement'].selection).get(invoice.unit_measurement)"/>
                                         </td>
                                         <td>
-                                            <t t-esc="position.price"/>
+                                            <t t-esc="invoice.price"/>
                                         </td>
                                         <td>
-                                            <t t-esc="position.description"/>
+                                            <t t-esc="invoice.quantity"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="invoice.total_sum"/>
                                         </td>
                                     </tr>
                                 </t>

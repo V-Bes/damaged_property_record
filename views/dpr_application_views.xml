@@ -7,6 +7,7 @@
                     <header>
                         <button name="%(damaged_property_record.dpr_application_main_report)d" type="action" string="Application report"/>
                     </header>
+                    <field name="number"/>
                     <field name="dpr_owner_id"/>
                     <field name="dpr_property_id"/>
                     <field name="drrp"/>
@@ -22,7 +23,7 @@
              <field name="arch" type="xml">
                  <graph string="Graph" stacked="0">
                      <field name="date_creation"/>
-                     <field name="dpr_property_id" type="measure" string="Property date For graph"/>
+                     <field name="dpr_property_id" type="measure" string="Property"/>
                  </graph>
              </field>
          </record>
@@ -37,6 +38,11 @@
                         <field name="status_application" widget="statusbar" options="{'clickable':'1'}"/>
                     </header>
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="number"/>
+                            </h1>
+                        </div>
                         <group>
                             <field name="drrp"/>
                             <field name="text_application"/>
@@ -47,14 +53,28 @@
                             <field name="dpr_information_notice_id"/>
                             <field name="dpr_property_id"/>
                             <field name="dpr_owner_id"/>
-                            <field name="total_amount" style="font-weight: bold;" widget="monetary"/>
-                            <!--<field name="position_ids"/>-->
-                         </group>
+
+                            <div class="oe_chatter">
+                                <field name="message_ids" widget="mail_thread"/>
+                            </div>
+                        </group>
                         <notebook>
-                            <page name="html_note_id" string="HTML book note">
-                                <group>
-                                    <field name="position_ids" options="{'codeview': true}" class="oe-bordered-editor"/>
+                            <page name="checklist_id" string="Checklist" create="1" nolabel="1">
+                                <field name="invoice_ids" nolabel="1" create="1">
+                                    <tree editable="bottom">
+                                        <field name="dpr_position_id" readonly="True" string="Position"/>
+                                        <field name="unit_measurement" readonly="True"/>
+                                        <field name="price" readonly="True"/>
+                                        <field name="quantity"/>
+                                        <field name="total_sum" readonly="True"/>
+                                    </tree>
+                                </field>
+                                <h2>
+                                <group class="oe_subtotal_footer">
+                                    <field name="total_amount" style="font-weight: bold;" widget="monetary"
+                                    options="{'currency_field': 'company_currency_id'}" string="Total"/>
                                 </group>
+                                </h2>
                             </page>
                         </notebook>
                     </sheet>

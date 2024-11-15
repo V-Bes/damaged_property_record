@@ -1,0 +1,48 @@
+<odoo>
+        <record id="dpr_invoice_tree" model="ir.ui.view">
+            <field name="name">dpr.invoice.tree ()</field>
+            <field name="model">dpr.invoice</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dpr_position_id"/>
+                    <field name="unit_measurement"/>
+                    <field name="price"/>
+                    <field name="quantity"/>
+                    <field name="total_sum"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dpr_invoice_views_form" model="ir.ui.view">
+            <field name="name">dpr.invoice.form ()</field>
+            <field name="model">dpr.invoice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dpr_position_id"/>
+                                <field name="unit_measurement"/>
+                                <field name="price"/>
+                                <field name="quantity"/>
+                                <field name="total_sum"/>
+                             </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_dpr_invoice_window" model="ir.actions.act_window">
+            <field name="name">Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dpr.invoice</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="dpr_menu_invoice"
+                  action="action_dpr_invoice_window"
+                  parent="dpr_menu_main_consumers"
+                  name="Invoice" sequence="400"/>
+
+</odoo>

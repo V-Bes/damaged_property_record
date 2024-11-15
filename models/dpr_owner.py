@@ -56,6 +56,8 @@ class DamagedPropertyOwner(models.Model):
         readonly="True",
     )
 
+    contact_person = fields.Char()
+
     @api.depends('birthday')
     def _compute_age(self):
         for record in self:

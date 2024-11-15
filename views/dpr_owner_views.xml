@@ -25,11 +25,12 @@
                                 <field name="phone"/>
                                 <field name="birthday"/>
                                 <field name="age"/>
+                                <field name="gender"/>
                              </group>
                             <group>
                                 <field name="foto" widget='image' class="oe_avatar m-0"
                                 option='{"zoom": true, "preview_image":"avatar_256"}'/>
-                                <field name="gender"/>
+                                <field name="contact_person"/>
                                 <field name="passport"/>
                                 <field name="property_ids"  widget="many2many_tags"/>
                             </group>
@@ -48,7 +49,7 @@
 
         <menuitem id="dpr_menu_owner"
                   action="action_dpr_owner_window"
-                  parent="dpr_main_menu"
+                  parent="dpr_menu_main_consumers"
                   name="Owner" sequence="400"/>
 
 </odoo>

@@ -25,8 +25,9 @@ class DamagedPropertyPosition(models.Model):
         required=True,
     )
 
-    dpr_application_ids = fields.Many2many(
-        comodel_name='dpr.application',
+    invoice_ids = fields.One2many(
+        comodel_name='dpr.invoice',
+        inverse_name='dpr_position_id',
     )
 
     description = fields.Text()
