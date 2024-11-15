@@ -26,19 +26,21 @@
                         </div>
                         <br/>
                         <group>
-                            <field name="drrp"/>
-                            <field name="date_damaged"/>
-                            <field name="description_damaged"/>
-                            <field name="date_create" readonly="True"/>
-                            <field name="date_end" readonly="True"/>
+                            <group>
+                                <field name="drrp"/>
+                                <field name="date_damaged"/>
+                                <field name="description_damaged"/>
+                                <field name="approved" widget="boolean_toggle"/>
+                                <field name="dpr_property_id"/>
+                            </group>
+                            <group>
+                                <field name="date_create" readonly="True"/>
+                                <field name="date_end" readonly="True"/>
+                                <div class="oe_chatter">
+                                    <field name="message_ids" widget="mail_thread"/>
+                                </div>
+                            </group>
                         </group>
-                        <group>
-                            <field name="approved" widget="boolean_toggle"/>
-                            <field name="dpr_property_id"/>
-                            <div class="oe_chatter">
-                                <field name="message_ids" widget="mail_thread"/>
-                            </div>
-                         </group>
                             <notebook>
                                 <page name="property_id" string="Property info">
                                     <group>
