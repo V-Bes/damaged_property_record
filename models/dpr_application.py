@@ -63,8 +63,14 @@ class DamagedPropertyApplication(models.Model):
         store=True
     )
 
-    invoice_ids = fields.Many2many(
+    #invoice_ids = fields.Many2many(
+    #    comodel_name='dpr.invoice',
+    #)
+
+    invoice_ids = fields.One2many(
         comodel_name='dpr.invoice',
+        inverse_name='dpr_application_ids',
+        string='Authors Books',
     )
 
     company_id = fields.Many2one(

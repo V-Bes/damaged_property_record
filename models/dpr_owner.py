@@ -56,7 +56,13 @@ class DamagedPropertyOwner(models.Model):
         readonly="True",
     )
 
-    contact_person = fields.Char()
+    res_partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string="Contact person",
+        index=True,
+        domain=[('is_contact_dpr', '=', True)],
+        ondelete='set null',
+    )
 
     @api.depends('birthday')
     def _compute_age(self):

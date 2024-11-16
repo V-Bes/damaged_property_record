@@ -28,6 +28,7 @@
         'views/dpr_city_views.xml',
         'views/dpr_position_views.xml',
         'views/dpr_invoice_views.xml',
+        'views/res_partner_view.xml',
 
     ],
     'demo': [

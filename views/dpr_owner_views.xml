@@ -30,7 +30,7 @@
                             <group>
                                 <field name="foto" widget='image' class="oe_avatar m-0"
                                 option='{"zoom": true, "preview_image":"avatar_256"}'/>
-                                <field name="contact_person"/>
+                                <field name="res_partner_id"/>
                                 <field name="passport"/>
                                 <field name="property_ids"  widget="many2many_tags"/>
                             </group>

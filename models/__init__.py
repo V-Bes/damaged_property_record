@@ -5,3 +5,4 @@ from . import dpr_information_notice
 from . import dpr_application
 from . import dpr_city
 from . import dpr_invoice
+from . import res_partner

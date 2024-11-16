@@ -53,7 +53,7 @@ class DamagedPropertyInvoice(models.Model):
         store=True,
     )
 
-    dpr_application_ids = fields.Many2many(
+    dpr_application_ids = fields.Many2one(
         comodel_name='dpr.application',
     )
 

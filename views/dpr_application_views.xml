@@ -62,11 +62,11 @@
                             <page name="checklist_id" string="Checklist" create="1" nolabel="1">
                                 <field name="invoice_ids" nolabel="1" create="1">
                                     <tree editable="bottom">
-                                        <field name="dpr_position_id" readonly="True" string="Position"/>
+                                        <field name="dpr_position_id" string="Position"/>
                                         <field name="unit_measurement" readonly="True"/>
                                         <field name="price" readonly="True"/>
                                         <field name="quantity"/>
-                                        <field name="total_sum" readonly="True"/>
+                                        <field name="total_sum"/>
                                     </tree>
                                 </field>
                                 <h2>
