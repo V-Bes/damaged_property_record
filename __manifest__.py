@@ -17,7 +17,9 @@
     ],
 
     'data': [
+        'security/dpr_groups.xml',
         'security/ir.model.access.csv',
+        'security/dpr_security.xml',
         'report/hr_hospital_application_report.xml',
         'wizard/dpr_fill_out_checklist_wizard_view.xml',
         'views/dpr_menu.xml',

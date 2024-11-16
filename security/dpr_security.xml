@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="dpr_rule_user_information_notice" model="ir.rule">
+            <field name="name">DPR users can only view not approved information notice</field>
+            <field name="model_id" ref="model_dpr_information_notice"/>
+            <field name="domain_force">[('approved', '!=', True)]</field>
+            <field name="groups" eval="[(4, ref('group_dpr_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="dpr_rule_user_application" model="ir.rule">
+            <field name="name">DPR users can only view not approved application</field>
+            <field name="model_id" ref="model_dpr_application"/>
+            <field name="domain_force">[('approved', '!=', True)]</field>
+            <field name="groups" eval="[(4, ref('group_dpr_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="dpr_rule_admin" model="ir.rule">
+            <field name="name">DPR administrators have full rights on information notice</field>
+            <field name="model_id" ref="model_dpr_information_notice"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_dpr_admin'))]"/>
+        </record>
+</odoo>
