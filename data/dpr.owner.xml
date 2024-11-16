@@ -1,0 +1,41 @@
+<odoo>
+    <record id="dpr_owner_1" model="dpr.owner">
+        <field name="first_name">Степанов</field>
+        <field name="last_name">Олександр</field>
+        <field name="phone">+380631233212</field>
+        <field name="gender">male</field>
+        <field name="birthday">1969-10-11</field>
+        <field name="passport">ММ 325689, Харківським РВУМВС, 12.05.1980</field>
+        <field name="foto" type="base64" file="damaged_property_record/static/img/owner_1.png"/>
+    </record>
+
+    <record id="dpr_owner_2" model="dpr.owner">
+        <field name="first_name">Коваленко</field>
+        <field name="last_name">Євгенія</field>
+        <field name="phone">+380661233333</field>
+        <field name="gender">female</field>
+        <field name="birthday">1998-08-15</field>
+        <field name="passport">МН 324512, Полтавським РВУМВС, 16.03.2015</field>
+        <field name="foto" type="base64" file="damaged_property_record/static/img/owner_2.png"/>
+    </record>
+
+    <record id="dpr_owner_3" model="dpr.owner">
+        <field name="first_name">Полтавська</field>
+        <field name="last_name">Ксенія</field>
+        <field name="phone">+380971233142</field>
+        <field name="gender">female</field>
+        <field name="birthday">1989-05-16</field>
+        <field name="passport">МН 325111, Харківським РВУМВС, 17.02.2005</field>
+        <field name="foto" type="base64" file="damaged_property_record/static/img/owner_3.png"/>
+    </record>
+
+    <record id="dpr_owner_4" model="dpr.owner">
+        <field name="first_name">Назаренко</field>
+        <field name="last_name">Степан</field>
+        <field name="phone">+380931233888</field>
+        <field name="gender">male</field>
+        <field name="birthday">1985-01-22</field>
+        <field name="passport">ММ 325769, Полтавським РВУМВС, 03.08.2003</field>
+        <field name="foto" type="base64" file="damaged_property_record/static/img/owner_4.png"/>
+    </record>
+</odoo>

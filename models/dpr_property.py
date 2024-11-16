@@ -17,21 +17,13 @@ class DamagedPropertyProperty(models.Model):
         string="Owner",
     )
 
-    house_area = fields.Integer(
-        required=True,
-    )
+    house_area = fields.Float()
 
-    year_construction = fields.Date(
-        required=True,
-    )
+    year_construction = fields.Date()
 
-    number_storeys = fields.Integer(
-        required=True,
-    )
+    number_storeys = fields.Integer()
 
-    registration_date_BTI = fields.Date(
-        required=True,
-    )
+    registration_date_BTI = fields.Date()
 
     basement = fields.Boolean(
         default=False,
@@ -41,11 +33,9 @@ class DamagedPropertyProperty(models.Model):
         default=False,
     )
 
-    count_registered_people = fields.Integer(
-        required=True,
-    )
+    count_registered_people = fields.Integer()
 
-    drrp = fields.Integer(
+    drrp = fields.Char(
         required=True,
         string='DRRP',
     )
@@ -73,7 +63,7 @@ class DamagedPropertyProperty(models.Model):
                 ('id', '!=', record.id),
             ])
             if is_duplicate:
-                raise ValidationError(_('Duplicate property found for the same '
+                raise ValidationError(_('Duplicate property found for the same'
                                         'DRRP.'))
 
     @api.constrains('year_construction','registration_date_BTI')

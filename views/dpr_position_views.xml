@@ -41,5 +41,4 @@
                   action="action_dpr_position_window"
                   parent="dpr_menu_main_consumers"
                   name="Position" sequence="400"/>
-
 </odoo>

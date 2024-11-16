@@ -1,0 +1,42 @@
+<odoo>
+    <record id="dpr_information_notice_1" model="dpr.information.notice">
+        <field name="number">IN-000001</field>
+        <field name="drrp">1234567896534</field>
+        <field name="description_damaged">Пошкоджена крівля будинку, вибиті 4 вікна, пошкоджено дві кімнати</field>
+        <field name="date_damaged">2024-10-24</field>
+        <field name="date_create">2024-11-10</field>
+        <field name="approved">True</field>
+        <field name="dpr_property_id" ref="dpr_property_1"/>
+    </record>
+
+    <record id="dpr_information_notice_2" model="dpr.information.notice">
+        <field name="number">IN-000002</field>
+        <field name="drrp">6598632165498</field>
+        <field name="description_damaged">Вибито 2 вікна, пошкоджено стіна з зовнішньої сторони</field>
+        <field name="date_damaged">2024-09-18</field>
+        <field name="date_create">2024-10-01</field>
+        <field name="approved">True</field>
+        <field name="dpr_property_id" ref="dpr_property_2"/>
+    </record>
+
+    <record id="dpr_information_notice_3" model="dpr.information.notice">
+        <field name="number">IN-000003</field>
+        <field name="drrp">6359864321569</field>
+        <field name="description_damaged">Пошкоджено фасад з однієї сторони</field>
+        <field name="date_damaged">2024-08-03</field>
+        <field name="date_create">2024-09-10</field>
+        <field name="approved">True</field>
+        <field name="dpr_property_id" ref="dpr_property_3"/>
+    </record>
+
+    <record id="dpr_information_notice_4" model="dpr.information.notice">
+        <field name="number">IN-000004</field>
+        <field name="drrp">9865325698452</field>
+        <field name="description_damaged">Пошкоджені ворота, фасад дому, два вікна</field>
+        <field name="date_damaged">2024-11-07</field>
+        <field name="date_create">2024-11-10</field>
+        <field name="approved">False</field>
+        <field name="dpr_property_id" ref="dpr_property_4"/>
+    </record>
+
+</odoo>

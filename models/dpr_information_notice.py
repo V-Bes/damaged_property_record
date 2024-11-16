@@ -19,7 +19,7 @@ class DamagedPropertyInformationNotice(models.Model):
         required=True,
     )
 
-    drrp = fields.Integer(
+    drrp = fields.Char(
         required=True,
         string='DRRP',
     )
@@ -39,8 +39,7 @@ class DamagedPropertyInformationNotice(models.Model):
 
     date_end = fields.Date(
         default=fields.Datetime.now() + timedelta(days=14),
-        required=True,
-    )
+   )
 
     approved = fields.Boolean(
         default=False

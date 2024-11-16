@@ -1,0 +1,72 @@
+<odoo>
+    <record id="dpr_property_1" model="dpr.property">
+        <field name="dpr_owner_id" ref="dpr_owner_1"/>
+        <field name="house_area">80.6</field>
+        <field name="year_construction">1960-10-11</field>
+        <field name="number_storeys">2</field>
+        <field name="registration_date_BTI">1969-01-01</field>
+        <field name="basement">True</field>
+        <field name="attic">True</field>
+        <field name="count_registered_people">4</field>
+        <field name="drrp">1234567896534</field>
+        <field name="city" ref="dpr_city_1"/>
+        <field name="address">вул. Прикордонників 24/2</field>
+    </record>
+
+    <record id="dpr_property_2" model="dpr.property">
+        <field name="dpr_owner_id" ref="dpr_owner_2"/>
+        <field name="house_area">63.7</field>
+        <field name="year_construction">1930-10-11</field>
+        <field name="number_storeys">1</field>
+        <field name="registration_date_BTI">1959-01-01</field>
+        <field name="basement">False</field>
+        <field name="attic">False</field>
+        <field name="count_registered_people">3</field>
+        <field name="drrp">6598632165498</field>
+        <field name="city" ref="dpr_city_2"/>
+        <field name="address">вул. Слобожанська 38</field>
+    </record>
+
+    <record id="dpr_property_3" model="dpr.property">
+        <field name="dpr_owner_id" ref="dpr_owner_3"/>
+        <field name="house_area">120.5</field>
+        <field name="year_construction">1990-10-11</field>
+        <field name="number_storeys">2</field>
+        <field name="registration_date_BTI">1991-01-01</field>
+        <field name="basement">True</field>
+        <field name="attic">True</field>
+        <field name="count_registered_people">5</field>
+        <field name="drrp">6359864321569</field>
+        <field name="city" ref="dpr_city_3"/>
+        <field name="address">вул. Зоряна 28</field>
+    </record>
+
+    <record id="dpr_property_4" model="dpr.property">
+        <field name="dpr_owner_id" ref="dpr_owner_4"/>
+        <field name="house_area">150</field>
+        <field name="year_construction">1995-10-11</field>
+        <field name="number_storeys">2</field>
+        <field name="registration_date_BTI">1996-01-01</field>
+        <field name="basement">True</field>
+        <field name="attic">True</field>
+        <field name="count_registered_people">2</field>
+        <field name="drrp">9865325698452</field>
+        <field name="city" ref="dpr_city_4"/>
+        <field name="address">вул. Вокзальна 18</field>
+    </record>
+
+    <record id="dpr_property_5" model="dpr.property">
+        <field name="dpr_owner_id" ref="dpr_owner_4"/>
+        <field name="house_area">40.5</field>
+        <field name="year_construction">1920-10-11</field>
+        <field name="number_storeys">1</field>
+        <field name="registration_date_BTI">1940-01-01</field>
+        <field name="basement">False</field>
+        <field name="attic">False</field>
+        <field name="count_registered_people">2</field>
+        <field name="drrp">3659865231658</field>
+        <field name="city" ref="dpr_city_4"/>
+        <field name="address">вул. Центральна 61</field>
+    </record>
+
+</odoo>

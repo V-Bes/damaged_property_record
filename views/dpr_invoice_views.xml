@@ -40,9 +40,4 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="dpr_menu_invoice"
-                  action="action_dpr_invoice_window"
-                  parent="dpr_menu_main_consumers"
-                  name="Invoice" sequence="400"/>
-
 </odoo>

@@ -18,7 +18,7 @@ class DamagedPropertyApplication(models.Model):
         required=True,
     )
 
-    drrp = fields.Integer(
+    drrp = fields.Char(
         string='DRRP',
     )
 
@@ -69,7 +69,7 @@ class DamagedPropertyApplication(models.Model):
 
     invoice_ids = fields.One2many(
         comodel_name='dpr.invoice',
-        inverse_name='dpr_application_ids',
+        inverse_name='dpr_application_id',
         string='Authors Books',
     )
 

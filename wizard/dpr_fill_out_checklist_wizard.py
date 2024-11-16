@@ -30,7 +30,7 @@ class DprFillOutChecklist(models.TransientModel):
                      'price': position_id.price,
                      'quantity': 1,
                      'total_sum': position_id.price,
-                     'dpr_application_ids': application_id})
+                     'dpr_application_id': application_id.id})
 
             application_id.total_amount = self.get_sum()
 

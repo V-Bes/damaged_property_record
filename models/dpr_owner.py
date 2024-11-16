@@ -97,3 +97,11 @@ class DamagedPropertyOwner(models.Model):
                 raise ValidationError(_(
                     "Please enter a valid phone number (10-15 digits, "
                     "optional '+' at the start)."))
+
+    @api.depends('first_name', 'last_name')
+    def _compute_display_name(self):
+        '''
+        This method sets the name of the view
+        '''
+        for owner in self:
+            owner.display_name = owner.first_name +  ' ' + owner.last_name

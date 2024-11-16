@@ -12,6 +12,7 @@ class DamagedPropertyInvoice(models.Model):
 
     dpr_position_id = fields.Many2one(
         comodel_name='dpr.position',
+        string='Position',
     )
 
     unit_measurement = fields.Selection(
@@ -53,7 +54,7 @@ class DamagedPropertyInvoice(models.Model):
         store=True,
     )
 
-    dpr_application_ids = fields.Many2one(
+    dpr_application_id = fields.Many2one(
         comodel_name='dpr.application',
     )
 
