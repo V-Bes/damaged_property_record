@@ -8,9 +8,9 @@
                         <button name="%(damaged_property_record.dpr_application_main_report)d" type="action" string="Application report"/>
                     </header>
                     <field name="number"/>
-                    <field name="dpr_owner_id"/>
-                    <field name="dpr_property_id"/>
+                    <field name="type_application"/>
                     <field name="drrp"/>
+                    <field name="dpr_owner_id"/>
                     <field name="status_application" widget="badge" decoration-success="status_application == 'processed'" decoration-info="status_application == 'at_work'" decoration-danger="status_application == 'new'" optional="show" on_change="1"/>
                 </tree>
             </field>
@@ -45,7 +45,7 @@
                         </div>
                         <group>
                             <field name="drrp"/>
-                            <field name="text_application"/>
+                            <field name="type_application"/>
                             <field name="approved" optional="hide" widget="boolean_toggle"/>
                             <field name="date_creation"/>
                         </group>
@@ -64,8 +64,8 @@
                                     <tree editable="bottom">
                                         <field name="dpr_position_id" string="Position"/>
                                         <field name="unit_measurement" readonly="True"/>
-                                        <field name="price" readonly="True"/>
                                         <field name="quantity"/>
+                                        <field name="price" readonly="True"/>
                                         <field name="total_sum"/>
                                     </tree>
                                 </field>
@@ -102,6 +102,7 @@
                 <search string="Group By">
                     <filter string="Date creation application" domain="[]" name="date_creation_group" context="{'group_by':'date_creation'}"/>
                     <filter string="Status application" domain="[]" name="status_application_group" context="{'group_by':'status_application'}"/>
+                    <filter string="Type application" domain="[]" name="type_application_group" context="{'group_by':'type_application'}"/>
                  </search>
             </field>
         </record>

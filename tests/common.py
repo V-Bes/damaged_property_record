@@ -10,7 +10,7 @@ class TestCommon(TransactionCase):
         self.test_application1 = self.env['dpr.application'].create({
             'number': 'Test',
             'drrp': 0,
-            'text_application': 'Test_1',
+            'type_application': 'type_application_1',
             'date_creation': fields.Datetime.now(),
         })
 

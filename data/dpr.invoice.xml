@@ -1,0 +1,43 @@
+<odoo>
+    <record id="dpr_invoice_1" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_1"/>
+        <field name="quantity">50</field>
+        <field name="dpr_application_id" ref="dpr_application_4"/>
+    </record>
+
+    <record id="dpr_invoice_2" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_2"/>
+        <field name="quantity">3</field>
+        <field name="dpr_application_id" ref="dpr_application_4"/>
+    </record>
+
+    <record id="dpr_invoice_3" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_3"/>
+        <field name="quantity">3</field>
+        <field name="dpr_application_id" ref="dpr_application_4"/>
+    </record>
+
+    <record id="dpr_invoice_4" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_4"/>
+        <field name="quantity">10</field>
+        <field name="dpr_application_id" ref="dpr_application_4"/>
+    </record>
+
+    <record id="dpr_invoice_5" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_1"/>
+        <field name="quantity">5</field>
+        <field name="dpr_application_id" ref="dpr_application_3"/>
+    </record>
+
+    <record id="dpr_invoice_6" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_1"/>
+        <field name="quantity">25</field>
+        <field name="dpr_application_id" ref="dpr_application_3"/>
+    </record>
+
+    <record id="dpr_invoice_7" model="dpr.invoice">
+        <field name="dpr_position_id" ref="dpr_position_3"/>
+        <field name="quantity">5</field>
+        <field name="dpr_application_id" ref="dpr_application_3"/>
+    </record>
+</odoo>

@@ -6,8 +6,8 @@
                 <tree>
                     <field name="dpr_position_id"/>
                     <field name="unit_measurement"/>
-                    <field name="price"/>
                     <field name="quantity"/>
+                    <field name="price"/>
                     <field name="total_sum"/>
                 </tree>
             </field>
@@ -23,8 +23,8 @@
                             <group>
                                 <field name="dpr_position_id"/>
                                 <field name="unit_measurement"/>
-                                <field name="price"/>
                                 <field name="quantity"/>
+                                <field name="price"/>
                                 <field name="total_sum"/>
                              </group>
                         </group>

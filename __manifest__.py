@@ -25,6 +25,8 @@
         'data/dpr.owner.xml',
         'data/dpr.property.xml',
         'data/dpr.information.notice.xml',
+        'data/dpr.application.xml',
+        'data/dpr.invoice.xml',
         'report/hr_hospital_application_report.xml',
         'wizard/dpr_fill_out_checklist_wizard_view.xml',
         'views/dpr_menu.xml',

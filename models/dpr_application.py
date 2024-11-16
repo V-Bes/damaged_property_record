@@ -22,7 +22,13 @@ class DamagedPropertyApplication(models.Model):
         string='DRRP',
     )
 
-    text_application = fields.Text()
+    type_application = fields.Selection(
+        selection=[
+            ('type_application_1', 'Заява на отримання компенсації за пошкоджене майно'),
+            ('type_application_2', 'Заява на виїзд комісії з візуального обстеження'),
+            ('type_application_3', 'Заява на отримання акту обстеження пошкодженого майна'),
+        ],
+    )
 
     approved = fields.Boolean(
         default=False
@@ -63,10 +69,6 @@ class DamagedPropertyApplication(models.Model):
         store=True
     )
 
-    #invoice_ids = fields.Many2many(
-    #    comodel_name='dpr.invoice',
-    #)
-
     invoice_ids = fields.One2many(
         comodel_name='dpr.invoice',
         inverse_name='dpr_application_id',
@@ -96,31 +98,32 @@ class DamagedPropertyApplication(models.Model):
 
     @api.depends('approved','total_amount')
     def _compute_information_property_owner(self):
-        if self.drrp and self.approved:
-            domain_dpr = [('drrp', '=', self.drrp),
-                          ('approved', '=', True)]
-            self.dpr_information_notice_id = (
-                self.env['dpr.information.notice'].search(domain_dpr))
-            if not self.dpr_information_notice_id:
-                raise ValidationError(_('No information notice '
-                                        'with this drrp code.'))
-            else:
-                self.dpr_property_id = (
-                    self.dpr_information_notice_id.dpr_property_id)
-                if not self.dpr_property_id:
-                    raise ValidationError(_('No property '
-                                            'with this information notice.'))
+        for record in self:
+            if record.drrp and record.approved:
+                domain_dpr = [('drrp', '=', record.drrp),
+                              ('approved', '=', True)]
+                record.dpr_information_notice_id = (
+                    record.env['dpr.information.notice'].search(domain_dpr))
+                if not record.dpr_information_notice_id:
+                    raise ValidationError(_('No information notice '
+                                            'with this drrp code.'))
                 else:
-                    self.dpr_owner_id = self.dpr_property_id.dpr_owner_id
-                    if not self.dpr_property_id:
-                        raise ValidationError(_('No owner with '
-                                                'this information notice.'))
-        else:
-            self.dpr_information_notice_id = False
-            self.dpr_property_id = False
-            self.dpr_owner_id = False
-            self.invoice_ids = False
-            self.total_amount = False
+                    record.dpr_property_id = (
+                        record.dpr_information_notice_id.dpr_property_id)
+                    if not record.dpr_property_id:
+                        raise ValidationError(_('No property '
+                                                'with this information notice.'))
+                    else:
+                        record.dpr_owner_id = record.dpr_property_id.dpr_owner_id
+                        if not record.dpr_property_id:
+                            raise ValidationError(_('No owner with '
+                                                    'this information notice.'))
+            else:
+                record.dpr_information_notice_id = False
+                record.dpr_property_id = False
+                record.dpr_owner_id = False
+                record.invoice_ids = False
+                record.total_amount = False
 
     @api.constrains('approved','total_amount')
     @api.depends('approved','total_amount')
@@ -137,9 +140,9 @@ class DamagedPropertyApplication(models.Model):
     @api.constrains('approved')
     def _onchange_approved(self):
         if self.approved:
-            if not (self.drrp and self.text_application):
+            if not (self.drrp and self.type_application):
                 raise ValidationError(_('The application cannot approved, fill in '
-                                    'the fields (DRRP and Text Application).'))
+                                    'the fields (DRRP and Type Application).'))
 
     @api.onchange('invoice_ids')
     @api.constrains('invoice_ids')
