@@ -41,6 +41,13 @@
 
     ],
     'demo': [
-
+        'demo/dpr.city.csv',
+        'demo/dpr.position.csv',
+        'demo/dpr.owner.xml',
+        'demo/dpr.property.xml',
+        'demo/dpr.information.notice.xml',
+        'demo/dpr.application.xml',
+        'demo/dpr.invoice.xml',
     ],
+
 }

@@ -1,0 +1,35 @@
+<odoo>
+    <record id="dpr_application_1" model="dpr.application">
+        <field name="number">AP-000001</field>
+        <field name="drrp">1234567896534</field>
+        <field name="type_application">type_application_1</field>
+        <field name="date_creation">2024-10-24</field>
+        <field name="approved">False</field>
+    </record>
+
+    <record id="dpr_application_2" model="dpr.application">
+        <field name="number">AP-000002</field>
+        <field name="drrp">6598632165498</field>
+        <field name="type_application">type_application_2</field>
+        <field name="date_creation">2024-10-21</field>
+        <field name="approved">True</field>
+    </record>
+
+    <record id="dpr_application_3" model="dpr.application">
+        <field name="number">AP-000003</field>
+        <field name="drrp">6359864321569</field>
+        <field name="type_application">type_application_3</field>
+        <field name="date_creation">2024-10-18</field>
+        <field name="approved">True</field>
+        <field name="total_amount">36328.75</field>
+    </record>
+
+    <record id="dpr_application_4" model="dpr.application">
+        <field name="number">AP-000004</field>
+        <field name="drrp">6598632165498</field>
+        <field name="type_application">type_application_1</field>
+        <field name="date_creation">2024-11-03</field>
+        <field name="approved">True</field>
+        <field name="total_amount">81558.29</field>
+    </record>
+</odoo>

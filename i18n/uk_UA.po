@@ -1,0 +1,762 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* damaged_property_record
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-17 20:09+0000\n"
+"PO-Revision-Date: 2024-11-17 20:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: damaged_property_record
+#: model:ir.actions.report,print_report_name:damaged_property_record.dpr_application_main_report
+msgid "\"Application report\""
+msgstr "\"Звіт по заявах\""
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_needaction
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_needaction
+msgid "Action Needed"
+msgstr "Потрібна дія"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__address
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__address
+msgid "Address"
+msgstr "Адреса"
+
+#. module: damaged_property_record
+#: model:res.groups,name:damaged_property_record.group_dpr_admin
+msgid "Admin"
+msgstr "Админ"
+
+#. module: damaged_property_record
+#: model:res.groups,comment:damaged_property_record.group_dpr_admin
+msgid "Admin of the dpr"
+msgstr "Админ dpr"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: damaged_property_record
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_main_settings
+msgid "Appeals"
+msgstr "Звернення"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_application_window
+#: model:ir.model,name:damaged_property_record.model_dpr_application
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_application
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Application"
+msgstr "Заява"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_tree
+msgid "Application report"
+msgstr "Звіт по заявах"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__approved
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__approved
+msgid "Approved"
+msgstr "Затверджено"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_attachment_count
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість вкладень"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__attic
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__attic
+msgid "Attic"
+msgstr "Мансарда"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__basement
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__basement
+msgid "Basement"
+msgstr "Підвал"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__birthday
+msgid "Birthday"
+msgstr "День народження"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.dpr_fill_out_checklist_wizard_action
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_fill_out_checklist_wizard_form
+msgid "Calculate amount"
+msgstr "Розрахувати суму"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_fill_out_checklist_wizard_form
+msgid "Cancel"
+msgstr "Відміна"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_form
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Checklist"
+msgstr "Чеклист"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_city_window
+#: model:ir.model,name:damaged_property_record.model_dpr_city
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__city
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__city
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_city
+msgid "City"
+msgstr "Місто"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__company_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: damaged_property_record
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_main_consumers
+msgid "Consumers"
+msgstr "Довідники"
+
+#. module: damaged_property_record
+#: model:ir.model,name:damaged_property_record.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__res_partner_id
+msgid "Contact person"
+msgstr "Контактна особа"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__count_registered_people
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__count_registered_people
+msgid "Count Registered People"
+msgstr "Кількість зареєстрованих осіб"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__create_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__create_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__create_date
+msgid "Created on"
+msgstr "Створено на"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__company_currency_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__company_currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: damaged_property_record
+#: model:ir.module.category,name:damaged_property_record.category_dpr
+msgid "DPR"
+msgstr "ОПМ"
+
+#. module: damaged_property_record
+#: model:ir.actions.report,name:damaged_property_record.dpr_application_main_report
+msgid "DPR application"
+msgstr "ОПМ заява"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__drrp
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__drrp
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__drrp
+msgid "DRRP"
+msgstr "ДРРП"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "DRRP:"
+msgstr "ДРРП:"
+
+#. module: damaged_property_record
+#: model:ir.ui.menu,name:damaged_property_record.dpr_main_menu
+msgid "Damaged property"
+msgstr "Облік пошкодженого майна"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__date_create
+msgid "Date Create"
+msgstr "Дата створення"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__date_creation
+msgid "Date Creation"
+msgstr "Дата створення"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__date_damaged
+msgid "Date Damaged"
+msgstr "Дата пошкодження"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__date_end
+msgid "Date End"
+msgstr "Дата кінцева"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_search
+msgid "Date creation application"
+msgstr "Дата створення заяви"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_property_kanban
+msgid "Delete"
+msgstr "Видалити"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__description
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__description
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__description
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__description_damaged
+msgid "Description Damaged"
+msgstr "Опис пошкоджень"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__display_name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__dpr_application_id
+msgid "Dpr Application"
+msgstr "ОПМ Заява"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_city.py:0
+#, python-format
+msgid "Duplicate name found for the samename."
+msgstr "Для одного імені знайдено повторюване ім’я"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_owner.py:0
+#, python-format
+msgid "Duplicate owner found for the same first name, last name, and phone."
+msgstr "Знайдено дубліката власника для того самого імені, прізвища та телефону"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_position.py:0
+#, python-format
+msgid ""
+"Duplicate position found for the samename, unit measurement, and price."
+msgstr "Знайдено повторювану позицію для тієї самої назви, одиниці вимірювання та ціни"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_property.py:0
+#, python-format
+msgid "Duplicate property found for the sameDRRP."
+msgstr "Для того самого ДРРП знайдено повторювану властивість"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_property_kanban
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: damaged_property_record
+#: model:ir.model.fields.selection,name:damaged_property_record.selection__dpr_owner__gender__female
+msgid "Female"
+msgstr "Жінка"
+
+#. module: damaged_property_record
+#: model:ir.model,name:damaged_property_record.model_dpr_fill_out_checklist_wizard
+msgid "Fill out checklist."
+msgstr "Заповнити чеклист"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_form
+msgid "Fill out the checklist"
+msgstr "Заповнити чеклист"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_information_notice_search
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_property_search
+msgid "Filters"
+msgstr "Фільтри"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__first_name
+msgid "First Name"
+msgstr "Ім'я"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_follower_ids
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_follower_ids
+msgid "Followers"
+msgstr "Послідовники"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_partner_ids
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Послідовники (Партнери)"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__foto
+msgid "Foto"
+msgstr "Фото"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__gender
+msgid "Gender"
+msgstr "Стать"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_graph
+msgid "Graph"
+msgstr "Графік"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_search
+msgid "Group By"
+msgstr "Групувати за"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__has_message
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__house_area
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__house_area
+msgid "House Area"
+msgstr "Площа будинку"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__id
+msgid "ID"
+msgstr "ІД"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_application__message_needaction
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_information_notice__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення вимагають вашої уваги"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_application__message_has_error
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_information_notice__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__information_notice_ids
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__information_notice_ids
+msgid "Information Notice"
+msgstr "Інформаційне повідомлення"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_information_notice_window
+#: model:ir.model,name:damaged_property_record.model_dpr_information_notice
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__dpr_information_notice_id
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_information_notice
+msgid "Information notice"
+msgstr "Інформаційне повідомлення"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_invoice_window
+#: model:ir.model,name:damaged_property_record.model_dpr_invoice
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__invoice_ids
+msgid "Invoice"
+msgstr "Розрахунок"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_res_partner__is_contact_dpr
+#: model:ir.model.fields,field_description:damaged_property_record.field_res_users__is_contact_dpr
+msgid "Is Contact Dpr"
+msgstr "Це контакт ОПМ"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_is_follower
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_is_follower
+msgid "Is Follower"
+msgstr "Є послідовником"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__last_name
+msgid "Last Name"
+msgstr "Прізвище"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__write_uid
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновлено"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__write_date
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__write_date
+msgid "Last Updated on"
+msgstr "Востаннє оновлено"
+
+#. module: damaged_property_record
+#: model:ir.model.fields.selection,name:damaged_property_record.selection__dpr_owner__gender__male
+msgid "Male"
+msgstr "Чоловік"
+
+#. module: damaged_property_record
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_catalog
+msgid "Menu"
+msgstr "Меню"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_has_error
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_ids
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_city__name
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__name
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_application.py:0
+#, python-format
+msgid "No information notice with this drrp code."
+msgstr "Немає інформаційного повідомлення з цим кодом ДРРП."
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_application.py:0
+#, python-format
+msgid "No owner with this information notice."
+msgstr "Немає власника з цією інформацією."
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_information_notice.py:0
+#, python-format
+msgid "No property with this drrp code."
+msgstr "Немає власності з цим кодом ДРРП."
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_application.py:0
+#, python-format
+msgid "No property with this information notice."
+msgstr "Немає власності з цією інформацією."
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__number
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__number
+msgid "Number"
+msgstr "Номер"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__number_storeys
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__number_storeys
+msgid "Number Storeys"
+msgstr "Кількість поверхів"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_needaction_counter
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__message_has_error_counter
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_application__message_needaction_counter
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_information_notice__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які вимагають дії"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_application__message_has_error_counter
+#: model:ir.model.fields,help:damaged_property_record.field_dpr_information_notice__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_owner_window
+#: model:ir.model,name:damaged_property_record.model_dpr_owner
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__dpr_owner_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__dpr_owner_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__dpr_owner_id
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_owner
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Owner"
+msgstr "Власник"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__passport
+msgid "Passport"
+msgstr "Паспорт"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_pivot
+msgid "Pivot"
+msgstr "Зведена таблиця"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_owner.py:0
+#, python-format
+msgid ""
+"Please enter a valid phone number (10-15 digits, optional '+' at the start)."
+msgstr "Будь ласка, введіть дійсний номер телефону (10-15 цифр, необов’язково «+» на початку)."
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_position_window
+#: model:ir.model,name:damaged_property_record.model_dpr_position
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_fill_out_checklist_wizard__position_ids
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__dpr_position_id
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_position
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_form
+msgid "Position"
+msgstr "Позиції пошкоджень"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__price
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__price
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Price"
+msgstr "Ціна"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_footer_template
+msgid "Printed:"
+msgstr "Друк:"
+
+#. module: damaged_property_record
+#: model:ir.actions.act_window,name:damaged_property_record.action_dpr_property_window
+#: model:ir.model,name:damaged_property_record.model_dpr_property
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__dpr_property_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__dpr_property_id
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_owner__property_ids
+#: model:ir.ui.menu,name:damaged_property_record.dpr_menu_property
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_graph
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Property"
+msgstr "Майно"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_information_notice_form
+msgid "Property info"
+msgstr "Інформація по майну"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__quantity
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__registration_date_BTI
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__registration_date_BTI
+msgid "Registration Date Bti"
+msgstr "Дата реєстрації в БТІ"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__status_application
+msgid "Status"
+msgstr "Статус"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_search
+msgid "Status application"
+msgstr "Статус заяви"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__total_sum
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Sum"
+msgstr "Сума"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_application.py:0
+#, python-format
+msgid ""
+"The application cannot approved, fill in the fields (DRRP and Type "
+"Application)."
+msgstr "Заявку неможливо схвалити, заповніть поля (DRRP і Тип)"
+
+#. module: damaged_property_record
+#. odoo-python
+#: code:addons/damaged_property_record/models/dpr_property.py:0
+#, python-format
+msgid "The registration date cannot be greater than the construction date."
+msgstr "Дата реєстрації не може бути більшою за дату будівництва."
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_fill_out_checklist_wizard_form
+msgid "This wizard fill out checklist"
+msgstr "Цей майстер заповнює контрольний список"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_form
+msgid "Total"
+msgstr "Всього"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__total_amount
+msgid "Total amount"
+msgstr "Загальна сума"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Total amount:"
+msgstr "Загальна сума:"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_application__type_application
+msgid "Type Application"
+msgstr "Тип заяви"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_search
+msgid "Type application"
+msgstr "Тип заяви"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_invoice__unit_measurement
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_position__unit_measurement
+msgid "Unit Measurement"
+msgstr "Од.вим."
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_application_main_template
+msgid "Unit measurement"
+msgstr "Од.вим."
+
+#. module: damaged_property_record
+#: model:res.groups,name:damaged_property_record.group_dpr_user
+msgid "User"
+msgstr "Користувач"
+
+#. module: damaged_property_record
+#: model:ir.module.category,description:damaged_property_record.category_dpr
+msgid "User access levels for the dpr"
+msgstr "Рівні доступу користувачів для ОПМ"
+
+#. module: damaged_property_record
+#: model:res.groups,comment:damaged_property_record.group_dpr_user
+msgid "User of the dpr"
+msgstr "Користувачі ОПМ"
+
+#. module: damaged_property_record
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_information_notice__year_construction
+#: model:ir.model.fields,field_description:damaged_property_record.field_dpr_property__year_construction
+msgid "Year Construction"
+msgstr "Дата будівництва"
+
+#. module: damaged_property_record
+#: model:ir.model.fields.selection,name:damaged_property_record.selection__dpr_application__status_application__at_work
+msgid "at work"
+msgstr "в роботі"
+
+#. module: damaged_property_record
+#: model:ir.model.fields.selection,name:damaged_property_record.selection__dpr_application__status_application__new
+msgid "new"
+msgstr "Новий"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_information_notice_search
+msgid "not approved"
+msgstr "не затверджено"
+
+#. module: damaged_property_record
+#: model:ir.model.fields.selection,name:damaged_property_record.selection__dpr_application__status_application__processed
+msgid "processed"
+msgstr "виконано"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_property_search
+msgid "with attic"
+msgstr "з мансардою"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_property_search
+msgid "with basement"
+msgstr "з підвалом"
+
+#. module: damaged_property_record
+#: model_terms:ir.ui.view,arch_db:damaged_property_record.dpr_footer_template
+msgid "| City:"
+msgstr "| Місто:"
