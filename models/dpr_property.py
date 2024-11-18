@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyProperty(models.Model):
+    '''
+    This model contains fields and methods for working with property
+    '''
     _name = 'dpr.property'
     _description = 'Property'
     _rec_name = 'drrp'
@@ -57,6 +60,9 @@ class DamagedPropertyProperty(models.Model):
 
     @api.constrains('drrp')
     def _check_duplicate(self):
+        '''
+        This function checks data for duplicates
+        '''
         for record in self:
             is_duplicate = self.search([
                 ('drrp', '=', record.drrp),
@@ -66,9 +72,12 @@ class DamagedPropertyProperty(models.Model):
                 raise ValidationError(_('Duplicate property found for the same'
                                         'DRRP.'))
 
-    @api.constrains('year_construction','registration_date_BTI')
-    def _check_duplicate(self):
+    @api.constrains('year_construction', 'registration_date_BTI')
+    def _check_date(self):
+        '''
+        This function checks that dates are entered correctly
+        '''
         for record in self:
-            if record.year_construction > record.registration_date_BTI :
+            if record.year_construction > record.registration_date_BTI:
                 raise ValidationError(_('The registration date cannot be '
                                         'greater than the construction date.'))

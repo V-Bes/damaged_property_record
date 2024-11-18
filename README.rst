@@ -1,5 +1,5 @@
 =======================================
-UA Odoo School: Damaged property record
+UA: Damaged property record
 =======================================
 
 This module for recording damaged property.
@@ -41,9 +41,9 @@ Credits
 Authors
 -------
 
-Vladyslav Obyhvost
+Vladyslav Obykhvost
 
 Contributors
 ------------
 
-* Vladyslav Obyhvost <vladioua@gmail.com>
+* Vladyslav Obykhvost <vladioua@gmail.com>

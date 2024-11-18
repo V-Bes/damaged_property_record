@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyPosition(models.Model):
+    '''
+    This model contains damaged property items
+    '''
     _name = 'dpr.position'
     _description = 'Position'
     _rec_name = 'name'
@@ -16,8 +19,8 @@ class DamagedPropertyPosition(models.Model):
 
     unit_measurement = fields.Selection(
         selection=[
-        ('m_sq', 'м.кв'),
-        ('piece', 'шт.'),
+            ('m_sq', 'м.кв'),
+            ('piece', 'шт.'),
         ],
         required=True)
 
@@ -34,6 +37,9 @@ class DamagedPropertyPosition(models.Model):
 
     @api.constrains('name', 'unit_measurement', 'price')
     def _check_duplicate(self):
+        '''
+        This function checks that the phone number is entered correctly
+        '''
         for record in self:
             is_duplicate = self.search([
                 ('name', '=',

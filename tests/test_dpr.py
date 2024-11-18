@@ -2,8 +2,8 @@ import logging
 from datetime import timedelta
 
 from odoo.exceptions import ValidationError
-from .common import TestCommon
 from odoo import fields
+from .common import TestCommon
 
 _logger = logging.getLogger(__name__)
 
@@ -39,20 +39,22 @@ class TestHospital(TestCommon):
             })
 
     def test_04_action_information_notice_approved(self):
-        with (self.assertRaises(ValidationError)):
-            self.test_information_notice1 = self.env['dpr.information.notice'
-            ].create({
-                'number': 'Test',
-                'drrp': 111,
-                'description_damaged': 'Test',
-                'date_damaged': fields.Datetime.now(),
-                'approved': 'True',
-                'house_area': 15,
-                'number_storeys': 15,
-                'count_registered_people': 15,
-                'year_construction': fields.Datetime.now(),
-                'registration_date_BTI': fields.Datetime.now(),
-            })
+        with ((((self.assertRaises(ValidationError))))):
+            self.test_information_notice1 = self.env[('dpr.information.'
+                                                      'notice')].create(
+                {
+                    'number': 'Test',
+                    'drrp': 111,
+                    'description_damaged': 'Test',
+                    'date_damaged': fields.Datetime.now(),
+                    'approved': 'True',
+                    'house_area': 15,
+                    'number_storeys': 15,
+                    'count_registered_people': 15,
+                    'year_construction': fields.Datetime.now(),
+                    'registration_date_BTI': fields.Datetime.now(),
+                }
+            )
 
     def test_05_action_position_duplicate(self):
         with self.assertRaises(ValidationError):

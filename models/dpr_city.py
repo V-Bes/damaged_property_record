@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyCity(models.Model):
+    '''
+    This model contains cities.
+    '''
     _name = 'dpr.city'
     _description = 'City'
     _rec_name = 'name'
@@ -16,6 +19,9 @@ class DamagedPropertyCity(models.Model):
 
     @api.constrains('name')
     def _check_duplicate(self):
+        '''
+        This function checks for duplicates.
+        '''
         for record in self:
             is_duplicate = self.search([
                 ('name', '=',

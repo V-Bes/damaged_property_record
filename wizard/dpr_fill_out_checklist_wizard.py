@@ -14,10 +14,10 @@ class DprFillOutChecklist(models.TransientModel):
     )
 
     def get_sum(self):
-        sum = 0
+        sum_total = 0
         for record in self.position_ids:
-            sum = sum + record.price
-        return sum
+            sum_total = sum_total + record.price
+        return sum_total
 
     def calculate_amount(self):
         active_ids = self.env.context.get('active_ids')
@@ -33,4 +33,3 @@ class DprFillOutChecklist(models.TransientModel):
                      'dpr_application_id': application_id.id})
 
             application_id.total_amount = self.get_sum()
-

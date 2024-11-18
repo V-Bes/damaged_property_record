@@ -8,6 +8,9 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyOwner(models.Model):
+    '''
+    This model contains data from the owners of the damaged property
+    '''
     _name = 'dpr.owner'
     _description = 'Owner'
     _rec_name = 'last_name'
@@ -66,6 +69,9 @@ class DamagedPropertyOwner(models.Model):
 
     @api.depends('birthday')
     def _compute_age(self):
+        '''
+        This function calculates the age of the owner
+        '''
         for record in self:
             if record.birthday:
                 record.age = fields.Date.today().year - record.birthday.year
@@ -74,6 +80,9 @@ class DamagedPropertyOwner(models.Model):
 
     @api.constrains('first_name', 'last_name', 'phone')
     def _check_duplicate(self):
+        '''
+        This function checks data for duplicates
+        '''
         for record in self:
             is_duplicate = self.search([
                 ('first_name', '=',
@@ -89,9 +98,11 @@ class DamagedPropertyOwner(models.Model):
 
     @api.constrains('phone')
     def _check_phone_number(self):
+        '''
+        This function checks that the phone number is entered correctly
+        '''
         phone_pattern = re.compile(
             r'^\+?[\d\s]{10,15}$')
-
         for record in self:
             if record.phone and not phone_pattern.match(record.phone):
                 raise ValidationError(_(
@@ -101,7 +112,7 @@ class DamagedPropertyOwner(models.Model):
     @api.depends('first_name', 'last_name')
     def _compute_display_name(self):
         '''
-        This method sets the name of the view
+        This function sets the name of the view
         '''
         for owner in self:
-            owner.display_name = owner.first_name +  ' ' + owner.last_name
+            owner.display_name = owner.first_name + ' ' + owner.last_name

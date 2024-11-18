@@ -1,11 +1,14 @@
 import logging
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyInvoice(models.Model):
+    '''
+    This model contains data of calculated positions in
+    the dpr_application model
+    '''
     _name = 'dpr.invoice'
     _description = 'Invoice'
     _rec_name = 'dpr_position_id'
@@ -17,9 +20,8 @@ class DamagedPropertyInvoice(models.Model):
 
     unit_measurement = fields.Selection(
         selection=[
-        ('m_sq', 'м.кв'),
-        ('piece', 'шт.'),
-        ],
+            ('m_sq', 'м.кв'),
+            ('piece', 'шт.'),],
     )
 
     price = fields.Float(
@@ -60,6 +62,9 @@ class DamagedPropertyInvoice(models.Model):
 
     @api.depends('dpr_position_id')
     def _compute_price_unit_measurement(self):
+        '''
+        This function fills in the price and unit_measurement.
+        '''
         for record in self:
             if record.dpr_position_id:
                 record.price = record.dpr_position_id.price
@@ -70,7 +75,9 @@ class DamagedPropertyInvoice(models.Model):
                 record.unit_measurement = False
 
     @api.depends('quantity')
-    def _compute_total_sum (self):
+    def _compute_total_sum(self):
+        '''
+        This function calculates the total.
+        '''
         for record in self:
             record.total_sum = record.price * record.quantity
-

@@ -1,7 +1,5 @@
 import logging
 
-from bokeh.core.property import readonly
-
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -9,6 +7,9 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyApplication(models.Model):
+    '''
+    This model contains statement data and methods.
+    '''
     _name = 'dpr.application'
     _description = 'Application'
     _rec_name = 'drrp'
@@ -24,9 +25,12 @@ class DamagedPropertyApplication(models.Model):
 
     type_application = fields.Selection(
         selection=[
-            ('type_application_1', 'Заява на отримання компенсації за пошкоджене майно'),
-            ('type_application_2', 'Заява на виїзд комісії з візуального обстеження'),
-            ('type_application_3', 'Заява на отримання акту обстеження пошкодженого майна'),
+            ('type_application_1', 'Заява на отримання компенсації за '
+                                   'пошкоджене майно'),
+            ('type_application_2', 'Заява на виїзд комісії з візуального '
+                                   'обстеження'),
+            ('type_application_3', 'Заява на отримання акту обстеження '
+                                   'пошкодженого майна'),
         ],
     )
 
@@ -95,8 +99,11 @@ class DamagedPropertyApplication(models.Model):
         tracking=True,
     )
 
-    @api.depends('approved','total_amount')
+    @api.depends('approved', 'total_amount')
     def _compute_information_property_owner(self):
+        '''
+        This function fills in the appropriate fields by DRRP number.
+        '''
         for record in self:
             if record.drrp and record.approved:
                 domain_dpr = [('drrp', '=', record.drrp),
@@ -106,17 +113,15 @@ class DamagedPropertyApplication(models.Model):
                 if not record.dpr_information_notice_id:
                     raise ValidationError(_('No information notice '
                                             'with this drrp code.'))
-                else:
-                    record.dpr_property_id = (
-                        record.dpr_information_notice_id.dpr_property_id)
-                    if not record.dpr_property_id:
-                        raise ValidationError(_('No property '
-                                                'with this information notice.'))
-                    else:
-                        record.dpr_owner_id = record.dpr_property_id.dpr_owner_id
-                        if not record.dpr_property_id:
-                            raise ValidationError(_('No owner with '
-                                                    'this information notice.'))
+                record.dpr_property_id = (
+                    record.dpr_information_notice_id.dpr_property_id)
+                if not record.dpr_property_id:
+                    raise ValidationError(_('No property with '
+                                            'this information notice.'))
+                record.dpr_owner_id = record.dpr_property_id.dpr_owner_id
+                if not record.dpr_property_id:
+                    raise ValidationError(_('No owner with this '
+                                            'information notice.'))
             else:
                 record.dpr_information_notice_id = False
                 record.dpr_property_id = False
@@ -124,9 +129,12 @@ class DamagedPropertyApplication(models.Model):
                 record.invoice_ids = False
                 record.total_amount = False
 
-    @api.constrains('approved','total_amount')
-    @api.depends('approved','total_amount')
+    @api.constrains('approved', 'total_amount')
+    @api.depends('approved', 'total_amount')
     def _compute_status_application(self):
+        '''
+        This function sets the status depending on the conditions.
+        '''
         for record in self:
             if record.approved and record.total_amount:
                 record.status_application = 'processed'
@@ -138,14 +146,21 @@ class DamagedPropertyApplication(models.Model):
     @api.onchange('approved')
     @api.constrains('approved')
     def _onchange_approved(self):
+        '''
+        This function checks whether the statement can be verified.
+        '''
         if self.approved:
             if not (self.drrp and self.type_application):
-                raise ValidationError(_('The application cannot approved, fill in '
-                                    'the fields (DRRP and Type Application).'))
+                raise ValidationError(_('The application cannot approved, '
+                                        'fill in the fields '
+                                        '(DRRP and Type Application).'))
 
     @api.onchange('invoice_ids')
     @api.constrains('invoice_ids')
     def _compute_sum(self):
+        '''
+        This function calculates the total amount.
+        '''
         self.total_amount = 0
         for record in self.invoice_ids:
             self.total_amount = self.total_amount + record.total_sum

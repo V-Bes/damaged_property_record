@@ -1,7 +1,6 @@
 import logging
 from datetime import timedelta
 
-from bokeh.core.property import readonly
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
@@ -10,6 +9,10 @@ _logger = logging.getLogger(__name__)
 
 
 class DamagedPropertyInformationNotice(models.Model):
+    '''
+    This model contains information notification data that
+    is entered based on data from the owner
+    '''
     _name = 'dpr.information.notice'
     _description = 'Information notice'
     _rec_name = 'number'
@@ -39,7 +42,7 @@ class DamagedPropertyInformationNotice(models.Model):
 
     date_end = fields.Date(
         default=fields.Datetime.now() + timedelta(days=14),
-   )
+    )
 
     approved = fields.Boolean(
         default=False
@@ -55,10 +58,13 @@ class DamagedPropertyInformationNotice(models.Model):
     @api.constrains('approved')
     @api.depends('approved')
     def _compute_property(self):
-        if self.drrp and self.approved==True:
+        '''
+        This function populates the fields of a given model with property data.
+        '''
+        if self.drrp and self.approved:
             domain_property = [('drrp', '=', self.drrp)]
-            self.dpr_property_id = (self.env['dpr.property']
-                                .search(domain_property))
+            self.dpr_property_id = (self.env['dpr.property'].
+                                    search(domain_property))
             self.house_area = self.dpr_property_id.house_area
             self.number_storeys = self.dpr_property_id.number_storeys
             self.city = self.dpr_property_id.city
@@ -82,6 +88,9 @@ class DamagedPropertyInformationNotice(models.Model):
     @api.constrains('date_create')
     @api.depends('date_create')
     def _compute_date_end(self):
+        '''
+        This function sets the end date value.
+        '''
         if self.date_create:
             self.date_end = self.date_create + timedelta(days=14)
         else:
