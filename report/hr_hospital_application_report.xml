@@ -62,7 +62,7 @@
                         <h3>Application</h3>
                         DRRP: <tr t-esc="o.drrp"/>
                         <br/>
-                        <tr t-esc="o.type_application"/>
+                        <tr t-esc="dict(o._fields['type_application'].selection).get(o.type_application)"/>
                         <br/>
                         <br/>
                         <h4>Owner</h4>
