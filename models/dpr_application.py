@@ -151,7 +151,7 @@ class DamagedPropertyApplication(models.Model):
         '''
         if self.approved:
             if not (self.drrp and self.type_application):
-                raise ValidationError(_('The application cannot approved, '
+                raise ValidationError(_('The application cannot approved,'
                                         'fill in the fields '
                                         '(DRRP and Type Application).'))
 
